@@ -2,6 +2,9 @@
 layout: post
 title: Becoming a pirate to fight pirates
 date: '2005-11-19'
+categories:
+  - News
+published: false
 ---
 
 Tech news sites have been reporting since a few weeks about a tool included in Sony music CDs, which acts like a virus, installing itself in the computer to make it unable to copy the music on the cd.

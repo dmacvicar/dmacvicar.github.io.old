@@ -2,6 +2,8 @@
 layout: post
 title: Snow!
 date: '2005-11-19'
+categories:
+  - Journal
 ---
 
  ![]({{ site.baseurl }}/assets/images/posts/media_httpstaticflick_ijcck-scaled500.jpg)
