@@ -2,8 +2,9 @@
 layout: post
 title: 1 year without eating Lentejas.
 date: '2006-08-21'
-tags:
-- food
+categories:
+  - Journal
+  - Food
 ---
 
 One year without eating them, so as I can't ask my mother to move here and cook them for me, I moved on, asked the recipe and learned.
