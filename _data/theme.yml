@@ -5,26 +5,26 @@ highlight_color: '#3498db'
 
 # Profile links on the left sidebar, leave blank to ignore
 social:
-  github: swanson
+  github: dmacvicar
   #bitbucket: philipj
-  hacker_news: swanson
+  hacker_news: dmacvicar
   #stackexchange: 348619
   #stackoverflow: 348619
-  twitter: _swanson
+  twitter: dmacvicar
   #facebook: zuck
   #tumblr: animalygifs
   #linkedin: philipjagielski
   #gplus: 110552447039675960964
-  #gravatar: 86e6ff8f75f9daef42d53b7f8002fd95
+  gravatar: 3b67365812827fa25df5093b38934a8f
   #flickr: johndoe
 
 # "Hi, I'm _______"
-name: Matt Swanson
-email: test@example.com
-tagline: "weak opinions, strongly held"
+name: Duncan Mac-Vicar P.
+email: dmacvicar@suse.com
+tagline: "tilting at windmills"
 
 # Google Analytics key, leave blank to ignore
-google_analytics_key: UA-xxxx-x
+google_analytics_key: UA-1687066-2
 
 # Toggle "Postings are my own" disclaimer in footer
 show_disclaimer: true
