@@ -1,0 +1,65 @@
+---
+layout: post
+title: various
+date: '2007-10-04'
+tags:
+- newkde
+- newsuse
+- open-source
+- suse
+---
+
+### One Click Install
+
+Help us to market [one click install][9]. Go to your software vendor and ask them to provide one-click-install links for their product, together with a install repository. They will, answer "we have no idea how to do that", then you point them to [this tutorial][11].
+
+### Qt
+
+From [Aaron's blog][6]:
+
+> Matthias Ettrich is up now doing the Qt platform directions talk, speaking about where Qt is goingin 4.4 and 4.5. He covered:
+
+One of the topics was:
+
+> WebKit: merging web technologies and desktop applications. Things like accessing signals/slots from javascript or moving things around in the DOM from C++
+
+Also:
+
+> There are apparently plans for at least a 4.7 and there are no current plans for Qt5. If a Qt5 were to happen, it wouldn't be before 2011/2012 and it would not be a major API design break with Qt4 as Qt4 was to Qt3. However, they feel that Qt4 has what is needed for years of innovation to come and so there are no plans at all for a Qt5 right now.
+
+### openSUSE 10.3
+
+From [Martin Schlander's blog][7]:
+
+> After listening to those same complaints for a long period of time, it’s amazing that they are all obsoleted in one single release cycle.
+
+* Cleaned up my bug list. Closed 10.2 bugs fixed in 10.3 that will not be released as online updates and other ones.
+
+### Package Kit
+
+Richard Hughes [calls][2] for a Qt based package manager for PackageKit.
+
+> I would love to see a QT-based package manager and update icon using the PackageKit API. I'm quite prepared to make changes the the libpackagekit source if this is needed, I know I use a lot of gobject'isms. I can provide a private git server and add as much documentation as you guys need, I just need someone to take lead of such a project. Email the mailing list if you are interested. Thanks.
+
+You can see [documentation here][1] and available backends [here][4].
+
+### Kopete
+
+[Matt Rogers calls][3] for more Kopete developers.
+
+### My build service packages
+
+Upgraded and fixed builds in most packages from the [security:privacy repository][5] [project][10] in the openSUSE build service, including tor, torK, vidalia and truecrypt. torK still does not build on x86.
+
+[1]: http://www.packagekit.org/wiki/index.php/Documentation  
+ [2]: http://hughsient.livejournal.com/39850.html  
+ [3]: http://matt.rogers.name/blog/2007/09/28/who-wants-to-be-a-kopete-developer/  
+ [4]: http://www.packagekit.org/wiki/index.php/Backends  
+ [5]: http://download.opensuse.org/repositories/security:/privacy/  
+ [6]: http://aseigo.blogspot.com/2007/10/qt-roadmap.html  
+ [7]: http://mschlander.wordpress.com/2007/10/03/weather-forecast-lizard-blizzard-coming/  
+ [8]: http://www.cnr.com/  
+ [9]: http://news.opensuse.org/?p=133  
+ [10]: http://build.opensuse.org/project/monitor?project=security%3Aprivacy  
+ [11]: http://en.opensuse.org/Publish_your_Software
+

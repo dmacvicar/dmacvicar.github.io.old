@@ -1,0 +1,11 @@
+---
+layout: post
+title: Kernel
+date: '2006-08-16'
+tags:
+- newsuse
+- suse
+---
+
+As booting from the 10.1 dvd was not a solution, I upgraded to the Factory build of the "Kernel of the day" project in the opensuse build service. Now my computer boots.
+

@@ -1,0 +1,44 @@
+---
+layout: post
+title: Allpeers
+date: '2006-08-25'
+tags:
+- business
+- freedom
+- politics
+- software
+- tech
+---
+
+![Logo][7]
+
+[Horacio][6] just sent me the link to [Allpeers][1], a nice [Firefox Extension][2] that promisses no more attachements in emails, and allow to share files with the people you want in a easy way and using efficient P2P technology.
+
+I went to the website to get more details. So here we go:
+
+Spyware, according to [FAQ][3]:  
+> AllPeers does not and will not contain these software pests. There are no Adware, Spyware or any other nastyware in AllPeers.
+
+Now, [the privacy page][4] says the typical blah blah:
+
+> When you register to use AllPeers, we collect the following information from you, and you need to give it to us in order to use our service: (i) username, (ii) password and (iii) email address. We do not look at the content of any message or files you share through our service. However, we sometimes collect anonymous information about your use of AllPeers. We need this information in order to operate AllPeers, but we do not share it with anyone. If we ever did contemplate sharing it, we would ask your permission first. We will use your information to authenticate your use of the service. Occasionally, we may use your email address to send you notices directly regarding AllPeers.
+
+So, I was a bit exceptic. What do they collect? Even if they promisse to not share such information. There are goverments forcing to log such data in order to get it later with any excuse.  
+Sounds crazy, but, bad people use anonymous systems for bad things. But bad goverments use people's information also for bad things.
+
+Then I saw:  
+> AllPeers is a privately held European company with offices in Oxford, United Kingdom and Prague, Czech Republic.
+
+The company being outside the US. is great news. That is the main problem of Google, no matter how hard the try to not be evil, they are a threat, being such society database in a country which goverment is every day more hungry for such data (yeah they even want MySpace data). Now, the UK s not [doing really well][5] in this topic.
+
+What do you think about Allpeers? Oh, it runs on Linux too.  
+How will it compete with built in instant messaging file transfer?
+
+[1]: http://www.allpeers.com  
+[2]: https://addons.mozilla.org/firefox/3234/  
+[3]: http://www.allpeers.com/faq.php  
+[4]: http://www.allpeers.com/privacy  
+[5]: http://www.theregister.co.uk/2006/05/19/ripa_enforcement  
+[6]: http://hrcn.wordpress.com/  
+[7]: http://www.allpeers.com/img/logo.png
+

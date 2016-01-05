@@ -1,0 +1,14 @@
+---
+layout: post
+title: update 22.04.2007
+date: '2007-04-23'
+---
+
+* Give a look to this [2-way sync for desktop][1] apps with google calendar.  
+* Stephan has a [KDE4 (development) live CD available][2].  
+* Yesterday I packaged qtemu, a nice front end for qemu in the [virtualization/qemu][3] repository.
+
+[1]: http://gcaldaemon.sourceforge.net  
+ [2]: http://home.kde.org/~binner/kde-four-live/  
+ [3]: http://software.opensuse.org/download/Virtualization:/Qemu
+

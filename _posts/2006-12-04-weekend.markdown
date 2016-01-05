@@ -1,0 +1,23 @@
+---
+layout: post
+title: weekend
+date: '2006-12-04'
+tags:
+- Life
+- open-source
+---
+
+From [Inge Wallin][2]'s blog, I learned that [OpenDocument][3] is now a [ISO standard][1].
+
+I updated tor and torK packages from the security:privacy repository in the openSUSE build service. I updated also gnash (flash player replacement) to version 0.7.2.
+
+Yesterday I went to see [Shantel // Bucovina Club][4]. The party was good and i liked the music. You can get some sample mp3's from Shantel [here][5].
+
+ ![]({{ site.baseurl }}/assets/images/posts/media_httpimg79images_abypc-scaled500.jpg)
+
+[1]: http://www.iso.org/iso/en/CatalogueDetailPage.CatalogueDetail?CSNUMBER=43485&ICS1=35&ICS2=240&ICS3=30  
+ [2]: http://ingwa2.blogspot.com/  
+ [3]: http://en.wikipedia.org/wiki/Opendocument  
+ [4]: http://www.bucovina.de/  
+ [5]: http://www.br-online.de/kultur-szene/thema/bavarianopensource-gratis-mp3/shantel.xml
+

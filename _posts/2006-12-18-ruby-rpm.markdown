@@ -1,0 +1,28 @@
+---
+layout: post
+title: ruby-rpm
+date: '2006-12-18'
+tags:
+- open-source
+---
+
+ruby-rpm is set of bindings to the rpm libraries. They were developed originally by the guys of the dead Momonga Linux distribution. However after the distro's death you could still find the tarball plus patches in lot of places.
+
+When I packaged it for first time, I got also some patches from that work.
+
+So I emailed all the listed authors and asked them if they were interested to keep the sources elsewhere for a more open upstream development, but I had no response. I set up a [project in rubyforge and forked it][2].
+
+David Lutterkort from RedHat contacted me. He also had patches. He did a good job integrating all the patches. Some days ago he released the first new tarball:
+
+> Summary: ruby-rpm 1.2.1 released  
+> Project: Ruby RPM bindings  
+>   
+> This is the initial release from ruby-rpm's new home ; it consolidates all the patches that have been floating around over the years.
+
+There is also a [mailing list here][1]. Viva upstream!
+
+The latest release is already in the build service, ruby project.
+
+[1]: http://rubyforge.org/mailman/listinfo/ruby-rpm-devel  
+ [2]: http://rubyforge.org/projects/ruby-rpm/
+

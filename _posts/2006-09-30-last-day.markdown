@@ -1,0 +1,10 @@
+---
+layout: post
+title: Last day
+date: '2006-09-30'
+---
+
+Today I have to keep myself awake, as it makes no sense to sleep and then get in the airport at 4 am.
+
+Got a mail from Frank Osterfeld about QRdf. I was surprised to see his RDF api in kdepimlibs, actually, I was starting the same API from scratch. Let's see if it is feasible to put redland behind the scenes in that code.
+

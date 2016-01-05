@@ -1,0 +1,35 @@
+---
+layout: post
+title: Last week
+date: '2008-09-15'
+tags:
+- chile
+- emacs
+- Life
+- newsuse
+- software
+- suse
+- yast
+- ycp
+---
+
+After two weeks of relaxing vacation in the sunny Spain, I had a very busy week, with lot of internal milestones.
+
+[Cristian Rodriguez][6] (judas\_iscariote), our colleague working from Chile was here two weeks, but he was leaving on Tuesday, so Monday was the only day where both of us where in Nuernberg. Luckily, there was some time for chat and beer.
+
+While you will see a constant flow of package check-ins containing lot of features. There are some other stuff worth to mention:
+
+* YaST contains an [interactive user interface debugger][1]. (now with [properties support][2] too). (Stefan Hundhammer's work)  
+* The distribution [can be installed over serial line][3] now (Steffen's work).
+
+Our trainee Alex has been blogging about the experience [of learning YaST][4].
+
+Oh, and I found the [emacs extension][5] I was looking for. :-)
+
+[1]: http://lizards.opensuse.org/2008/09/11/ydialogspy-an-interactive-yast-dialog-debugger/  
+[2]: http://lizards.opensuse.org/2008/09/12/ydialogspy-can-now-show-widget-properties/  
+[3]: http://lizards.opensuse.org/2008/09/12/installation-over-serial-line/  
+[4]: http://lizards.opensuse.org/2008/09/12/learning-yast-ycp-language/  
+[5]: http://code.google.com/p/yasnippet/  
+[6]: http://www.cristianrodriguez.net/
+

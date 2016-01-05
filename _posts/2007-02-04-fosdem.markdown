@@ -1,0 +1,21 @@
+---
+layout: post
+title: FOSDEM
+date: '2007-02-04'
+tags:
+- newsuse
+- open-source
+- suse
+---
+
+ ![]({{ site.baseurl }}/assets/images/posts/media_httpwwwfosdemor_zdmot-scaled500.jpg)
+
+20 days until FOSDEM, but our openSUSE team has already [all the information about our developer room and talks available][1].
+
+I will be doing [a talk about what are we doing with package management][2].
+
+Don't miss this nice opportunity to meet lot of community members in real life and also having 2 days of open source and belgian beer.
+
+[1]: http://www.fosdem.org/2007/schedule/tracks/opensuse  
+ [2]: http://www.fosdem.org/2007/schedule/events/opensuse_zypp
+

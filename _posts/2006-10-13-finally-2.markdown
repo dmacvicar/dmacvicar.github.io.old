@@ -1,0 +1,16 @@
+---
+layout: post
+title: finally
+date: '2006-10-13'
+tags:
+- Life
+---
+
+Upgraded to [nvidia beta driver 1.0-9625][1] and my desktop machine feels usable again. For months it was slower than my laptop. Now it feels responsive.
+
+My old T22 laptop received a memory, battery and wlan upgrade. All from ebay. I just like it so I did not feel like changing it yet.
+
+Also I found some time to re-setup my KDE4 development environment.
+
+[1]: http://www.nzone.com/object/nzone_downloads_rel70betadriver.html
+

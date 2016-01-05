@@ -1,0 +1,78 @@
+---
+layout: post
+title: enhancerepo 0.3.2
+date: '2008-10-06'
+tags:
+- enhancerepo
+- newsuse
+- software
+- suse
+- yum
+- zypp
+---
+
+A new version of [enhancerepo][1] (0.3.2) is building in [the build service][2].
+
+The new feature is updateinfo metadata generation (patches) support, in a simple but very automatic way, designed specially for testing purposes, but it may be sufficient for people wanting to generate patches for their own repositories.
+
+Using the --generate-update pkg1,pkg2.. option, enhancerepo will look in your repository (and additionally in another base directory), and look for all packages. If a package has multiple versions available (including the base directory) it will create update metadata in the repoparts directory. If you run enhancerepo with the --updates option (either in the same run or not) it will take all repoparts and index them in the updateinfo.xml. This allow to manually edit the patches before indexing them, or to mix automatically generated ones with hand-crafted ones.
+
+As additional coolness it will look for bugs to generate descriptions/references, update type (for example changes containing CVE references or vulnerabilities are tagged with security automatically).
+
+For example, I have 2 amarok packages in my repo, plus one in the 11.0 base directory. This command will look the 3 rpms, and start looking backwards till it finds some changes in the changelog. You can specify multiple packages per "patch".
+
+```
+# enhancerepo --generate-update amarok --updates --updates-base-dir /space/repo/11.0 /space/repo/duncan2
+generating update...
+3 versions for 'amarok'
+Found change amarok-1.4.10-17-i586.i586 and amarok-1.4.9.1-53-i586.i586.
+'amarok' has 1 entries (68/67)
+Saving update part to '/space/repo/duncan2/repoparts/update-amarok-1.xml'.
+Adding update /space/repo/duncan2/repoparts/update-amarok-1.xml
+Saving /space/repo/duncan2/repodata/updateinfo.xml.gz ..
+Adding /space/repo/duncan2/repodata/updateinfo.xml.gz to
+       /space/repo/duncan2/repodata/repomd.xml index
+repodata/updateinfo.xml.gz already exists. Replacing.
+Saving /space/repo/duncan2/repodata/repomd.xml ..
+```
+
+The resulting updateinfo.xml:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<updates>
+<update status="stable" from="dmacvicar@piscola" type="security" version="1">
+  <title>Untitled updatesecurity update 1 for amarok</title>
+  <id>amarok</id>
+  <issued>1223293050</issued>
+  <release>no release</release>
+  <description>
+    - update to 1.4.10: fix tmp file vulnerability in the Magnatune
+    database parsing. Secunia#SA31418 / CVE-2008-3699 / bnc#417232
+  </description>
+  <references>
+    <reference href="http://bugzilla.novell.com/417232"
+       title="bug number 417232" type="bugzilla" id="417232"/>
+    <reference
+       href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3699"
+       title="CVE number 2008-3699" type="cve" id="2008-3699"/>
+  </references>
+  <pkglist>
+    <collection>
+      <package name="amarok" arch="i586" version="1.4.10" release="17">
+        <filename>amarok-1.4.10-17.i586.rpm</filename>
+      </package>
+    </collection>
+  </pkglist>
+</update>
+</updates>
+```
+
+Some important notes:
+
+* If you generate an update, and then you don't add new packages or changes, enhancerepo will generate the same update again, but with a new version.
+
+[1]: http://en.opensuse.org/Enhancerepo  
+ [2]: http://software.opensuse.org/search?q=enhancerepo  
+ [3]: http://software.opensuse.org/search?q=ruby-rpm
+

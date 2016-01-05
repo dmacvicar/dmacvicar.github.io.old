@@ -1,0 +1,15 @@
+---
+layout: post
+title: Finally
+date: '2007-10-25'
+---
+
+ ![]({{ site.baseurl }}/assets/images/posts/media_httpimg454image_ivdgu-scaled500.png)
+
+After lot of signed petitions. Trying lot of [hacks][1] which never worked. Even tried to implement my own imap server to gdata proxy (which was able to get the labels and mail headers), today, Google has made the dream of million of people true.
+
+Since yesterday, [GMail supports IMAP access][2]. Yes, I tried it, and it works!.
+
+[1]: http://search.cpan.org/%7Ekrs/GMail-IMAPD-0.93/lib/GMail/IMAPD.pm  
+ [2]: http://gmailblog.blogspot.com/2007/10/sync-your-inbox-across-devices-with.html
+

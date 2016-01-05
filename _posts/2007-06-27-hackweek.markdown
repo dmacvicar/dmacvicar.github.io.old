@@ -1,0 +1,102 @@
+---
+layout: post
+title: Hackweek
+date: '2007-06-27'
+tags:
+- newsuse
+- ruby
+- suse
+---
+
+So, it is Hackweek. Hundreds of Novell engineers working on the things they are passionate about. A full week of fully innovation and cooperation.
+
+You can see the [flickr photos here][1]. [The ideas collected][2] (more [than 300][5], with a [hundred in progress][6]).
+
+So what am I doing?  
+[There are a few ideas for YaST][3]. YaST needs new light to evolve somewhere, and most of the ideas bring a step in this direction: Making it accessible from web services, other languages support, UI independence from the ycp language, etc.
+
+YaST already has perl bindings and there are some modules written in Perl.
+
+My project is [bidirectional ruby support for YaST][4], and it works already.
+
+So, in Ruby you could write:
+
+```
+module Foo
+  def self.multiply_by_eight(a)
+    return 8*a
+  end
+
+  def self.sum(a,b)
+    return a+b;
+  end
+```
+
+And then in a .ycp file:
+
+```
+{
+    import "Foo";
+    integer result = (integer) Foo::sum(2,3);
+    UI::OpenDialog(
+         `VBox(
+         `Label(sformat("%1", result)),
+         `PushButton("OK")
+         )
+         );
+    UI::UserInput();
+    UI::CloseDialog();
+}
+```
+
+It works!!!!:
+
+ ![]({{ site.baseurl }}/assets/images/posts/media_httpimg46images_kgodz-scaled500.png)
+
+Now, we can do YaST in Ruby too, using the "yast" module for Ruby, lets try the Arch module from YaST (which is ycp code)
+
+```
+require 'yast'
+
+m = YaST::Module.new("Arch")
+puts m.sparc32
+puts m.arch_short
+puts m.is_xen
+```
+
+The output is:
+
+```
+false
+x86_64
+false
+```
+
+What about something more complex. The Storage module is a C++ library. In order to bind it easily with YaST and being able to use SWIG, YaST developers access it using the YaST perl-bindings to access the generated SWIG perl-bindings from the C++ library, so calling this from Ruby code would go from Ruby, to YCP, to Perl, to C++:
+
+```
+m = YaST::Module.new("Storage")
+dp = m.GetDiskPartition("/dev/sda1")
+dp.each do | key, value |
+  puts "#{key} #{value}"
+end
+```
+
+The output is:
+
+```
+nr 1
+disk /dev/sda
+```
+
+I also tried to access the UI, but it does not work. Martin Vidner told me he is working on getting rid of this limitation. SCR access should be doable but I haven't look at it yet.
+
+I will decide tomorrow if I tune the code or I spend my 2 days left (I travel to aKademy on Friday) researching other stuff (probably I will spend it on YaST too).
+
+[1]: http://www.flickr.com/groups/hackweek/pool/  
+ [2]: http://idea.opensuse.org  
+ [3]: http://idea.opensuse.org/content/?do=search&id=yast  
+ [4]: http://idea.opensuse.org/content/ideas/make-yast-modules-accessible-from-other-languages-than-perl  
+ [5]: http://idea.opensuse.org/content/tag/idea  
+ [6]: http://idea.opensuse.org/content/tag/inprogress
+

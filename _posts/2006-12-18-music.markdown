@@ -1,0 +1,18 @@
+---
+layout: post
+title: Music
+date: '2006-12-18'
+---
+
+* [The 50 Worst Artists in Music History][1] is the biggest piece of crap ever written. How can you put Live, The Doors and Gipsy Kings there?. Well, in the same magazine, there is an article called [500 CDs You Must Own: Classic Rock][2], and they include "The Doors: The Very Best of the Doors]. Consistency?.  
+* You can see my brother playing in his University [here][3].  
+* My chilean friends Cristian and Rodrigo [met again to play some Megadeth songs][4].
+
+[Some tech predictions][5] about dynamic languages, ajax, java, etc.
+
+[1]: http://www.blender.com/guide/articles.aspx?id=466  
+[2]: http://www.blender.com/guide/articles.aspx?id=124  
+[3]: http://www.youtube.com/watch?v=C3hUcgu1Fx0  
+[4]: http://www.youtube.com/watch?v=wdouReJ4GMA  
+[5]: http://java.sys-con.com/read/313594.htm
+

@@ -1,0 +1,12 @@
+---
+layout: post
+title: YouTube
+date: '2006-10-10'
+tags:
+- business
+---
+
+[Google bought Youtube for 1.65 billion in stock][6].
+
+[6]: http://www.marketwatch.com/News/Story/Story.aspx?guid=%7b05306ED9-F56E-467C-BBA3-AFD9EB7335F8%7d&siteid=yhoo&dist=yhoo
+

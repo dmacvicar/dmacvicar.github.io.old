@@ -1,0 +1,34 @@
+---
+layout: post
+title: Edge YaST
+date: '2008-03-05'
+tags:
+- buildservice
+- community
+- newsuse
+- opensuse
+- suse
+- yast
+- zypp
+---
+
+One of the steps to build more community around YaST is to allow people to try it. Not every user uses factory but lot of people want to try one or more punctual recent features. This is not easy, because developers can't invest much time making sure the latest developments can work seamlessly outside factory. But we can do more. If it compiles and (available) tests run, then we are more or less sure it should run.
+
+In the last week we have been playing with the YaST and build systems in order to organize some YaST and zypp repositories abandoned in the openSUSE build service.
+
+I introduce to you the new layout:
+
+[YaST:SVN][1] are YaST packages submited from our code repository sources on a frequent basis. I am trying to make this as automated as possible, so I have internal scripts that submit packages when the repository compiles. Right now, I use this repo to test code that hasn't been committed to svn yet, like build fixes on other distributions.  
+[YaST:SVN][1] builds on top on another repository, called [zypp:svn][2], which is the zypp stack from svn. The svn series is build for Factory, released versions and also I added Fedora and Mandriva, even if it does not build right now. I think making the stack to work in other distributions is a place where the community can make a big contribution. I made satsolver library to build on Mandriva with about one hour of trial-error work. The value is that all spec file modifications are now in the svn repository and not as patches floating around there.
+
+On the other hand, we have the Backport series. [YaST:Backport][3] and [zypp:Backport][4] (the first builds on top of the second). These repositories are just package linked to the Factory ones, but the repository builds for 10.3, and I am trying to make it build in other Novell editions (SLE, 10.2, etc) and Mandriva/Fedora as well. We don't need to update this repository, as it rebuilds when Factory versions are submited, which makes it more stable than the svn series of the repositories.
+
+In the future, If we get enough help from the community to build all packages on something different than factory, I would like to create a Experimental series, which are packages linked to the svn series, plus patches from the community that are made upstream after testing them. That way the svn series of the repositories could turn themselves in being pure svn code, and submitted in a automatic way.
+
+YaST is yours, so your feedback and help is welcome. Right now you can find there a zypp and YaST stack from svn and Factory, built for 10.3. YaST modules are missing yet. If you want to help and have submit access to this repositories, we would gladly do it, just ask for it in our yast-devel or zypp-devel mailing lists.
+
+[1]: http://download.opensuse.org/repositories/YaST:/SVN/  
+[2]: http://download.opensuse.org/repositories/zypp:/svn/  
+[3]: http://download.opensuse.org/repositories/YaST:/Backport/  
+[4]: http://download.opensuse.org/repositories/zypp:/Backport/
+
