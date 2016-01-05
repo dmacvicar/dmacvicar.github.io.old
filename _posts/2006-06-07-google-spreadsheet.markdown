@@ -2,8 +2,9 @@
 layout: post
 title: Google Spreadsheet
 date: '2006-06-07'
-tags:
-- software
+categories:
+  - News
+published: false
 ---
 
 Google just launched a [online spreadsheet][1] with collaborative functions.

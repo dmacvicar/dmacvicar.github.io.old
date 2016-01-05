@@ -2,10 +2,10 @@
 layout: post
 title: The million dollar messenger
 date: '2006-07-18'
+categories:
+  - Software
 tags:
-- business
-- open-source
-- software
+- KDE
 ---
 
 As you may have seen [in Slashdot][2], Former Microsoft employes launched a site called [Ohloh][3] which is basically a Web 2.0 opensource software directory with tags, metrics and other useful information other directories don't have.

@@ -2,10 +2,7 @@
 layout: post
 title: VMWare player on SUSE 10.1
 date: '2006-07-16'
-tags:
-- newsuse
-- software
-- suse
+published: false
 ---
 
 While trying to install the rpm for [VMWare Player][2] on 10.1 I noticed the kernel modules don't compile.

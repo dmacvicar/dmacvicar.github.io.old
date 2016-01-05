@@ -2,8 +2,7 @@
 layout: post
 title: Blogging tool.
 date: '2006-08-15'
-tags:
-- blogging
+published: false
 ---
 
 [Robert Schiele][3] posted:

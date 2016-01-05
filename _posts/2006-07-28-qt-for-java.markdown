@@ -2,10 +2,11 @@
 layout: post
 title: Qt for Java
 date: '2006-07-28'
+categories:
+  - Journal
 tags:
-- newkde
-- newsuse
-- suse
+  - KDE
+  - SUSE
 ---
 
 Still in Boston. WIll told me during the breakfast that [Qt for Java development][1] Tech Preview was released. It features nice stuff like coexistence between C++ and Java code and [Eclipse integration][2]. Great news, especially this quote:

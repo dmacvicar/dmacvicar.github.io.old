@@ -2,9 +2,7 @@
 layout: post
 title: Internet boost postal service revenues
 date: '2006-08-03'
-tags:
-- business
-- tech
+published: false
 ---
 
 Many years ago, people predicted that snail mail would decline as result of the growing usage of email. Well, e-commerce has resulted in millions of packages being sent by snail mail and postal services are making more money.

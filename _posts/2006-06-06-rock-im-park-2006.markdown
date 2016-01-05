@@ -2,6 +2,8 @@
 layout: post
 title: Rock Im Park 2006
 date: '2006-06-06'
+categories:
+  - Journal
 ---
 
 ![Metallica live photo][1]

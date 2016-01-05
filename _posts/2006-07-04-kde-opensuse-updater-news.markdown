@@ -2,6 +2,11 @@
 layout: post
 title: "(KDE) OpenSUSE updater news"
 date: '2006-07-04'
+categories:
+  - Software
+tags:
+  - KDE
+  - SUSE
 ---
 
 Today I have been trying the lastest enhancements Narayan did to his [updater applet][1] in order to provide feedback to him. It is looking really good and it feels really light and fast.

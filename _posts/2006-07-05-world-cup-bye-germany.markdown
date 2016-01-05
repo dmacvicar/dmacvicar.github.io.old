@@ -2,8 +2,9 @@
 layout: post
 title: World Cup. Bye Germany
 date: '2006-07-05'
-tags:
-- germany
+published: false
+categories:
+  - Journal
 ---
 
 This worldcup is so boring. Long 0-0 matches and full of delays, fouls, and non-play stuff. If I am happy about Italy is because they provided me 2 minutes of soccer action I was expecting to get for the whole match.

@@ -2,9 +2,9 @@
 layout: post
 title: No lo dije ya?
 date: '2006-07-13'
-tags:
-- chile
-- spam
+categories:
+  - Chile
+published: false
 ---
 
 En mi post de ayer sobre la ley relativa al spam, le mencione al señor Novoa algunos nombres específicos como Pymeempresas, Cenryman, y Telefonica Internet Empresas. Bueno, pues me dio mucha risa hoy abrir mi correo y encontrar un spam de ellos, hace tiempo que no recibia uno:

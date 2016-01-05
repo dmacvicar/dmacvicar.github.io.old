@@ -2,9 +2,7 @@
 layout: post
 title: Flickr to open!
 date: '2006-06-19'
-tags:
-- software
-- web
+published: false
 ---
 
 Yeah, they are open since quite time. But I mean really, open. In my [last post][1] I wrote about Google PicasaWeb and why it is so difficult to switch between social applications once you already chose one and ahve a considerable amount of connections already.

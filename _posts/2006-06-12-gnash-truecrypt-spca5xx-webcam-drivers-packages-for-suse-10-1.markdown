@@ -2,9 +2,9 @@
 layout: post
 title: gnash, truecrypt, spca5xx webcam drivers packages for SUSE 10.1
 date: '2006-06-12'
-tags:
-- newsuse
-- suse
+categories:
+  - SUSE
+  - Software
 ---
 
 ![SUSE Logo][9] I have been playing a lot with the [OpenSUSE build service][7]. I can only say that it rocks. I can also say the [KMP standard][8] to do kernel modules is also great, so kudos for the SUSE kernel team.

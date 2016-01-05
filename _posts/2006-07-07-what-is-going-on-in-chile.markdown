@@ -2,11 +2,9 @@
 layout: post
 title: What is going on in Chile....
 date: '2006-07-07'
-tags:
-- chile
-- politics
-- society
-- spam
+categories:
+  - Chile
+published: false
 ---
 
 This is how justice in Chile works. A criminal arrested on Wednesday, was left free yesterday morning. He robbed another house and shot 5 times to a policeman. [Article here][1] ( sorry, spanish only).

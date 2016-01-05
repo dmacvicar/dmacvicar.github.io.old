@@ -2,9 +2,8 @@
 layout: post
 title: Stuttgart, dead harddisk
 date: '2006-08-14'
-tags:
-- germany
-- Life
+categories:
+  - Journal
 ---
 
 [Nice trip to Stuttgart on weekend][1]. Found that both [Mercedes][3] and [Porsche][2] factories are there, visited both. The Mercedes was full of people; waiting time 1 hour so we did not enter.

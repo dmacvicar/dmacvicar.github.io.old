@@ -2,10 +2,9 @@
 layout: post
 title: Red Hat Delays Enterprise Linux 5 Beta
 date: '2006-08-15'
-tags:
-- business
-- newsuse
-- suse
+published: false
+categories:
+  - News
 ---
 
 [from InformationWeek article...][1]

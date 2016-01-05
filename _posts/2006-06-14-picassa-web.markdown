@@ -2,8 +2,9 @@
 layout: post
 title: Picassa Web
 date: '2006-06-14'
-tags:
-- software
+categories:
+  - News
+published: false
 ---
 
 Google just launched [Picassa web][1]. I am waiting for my preview invitation.

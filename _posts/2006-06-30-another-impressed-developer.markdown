@@ -2,10 +2,11 @@
 layout: post
 title: Another impressed developer
 date: '2006-06-30'
+categories:
+  - Software
 tags:
-- newkde
-- newsuse
-- suse
+- KDE
+- SUSE
 ---
 
 As you may know, I am mentoring Narayan Newton's [KDE based OpenSUSE updater applet][2] for [Google Summer of Code][1].

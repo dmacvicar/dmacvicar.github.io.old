@@ -2,6 +2,7 @@
 layout: post
 title: Zidane's Cabezazo
 date: '2006-07-17'
+published: false
 tags:
 - germany
 ---
