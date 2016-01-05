@@ -2,9 +2,9 @@
 layout: post
 title: EFF publishes top 10 patent list
 date: '2006-07-06'
-tags:
-- business
-- freedom
+categories:
+  - News
+published: false
 ---
 
 The [Electronic Frontier Foundation[3] published a list of [10 patents][1] that should be killed or redefined, as they are obvious or vague and are being used by the companies that got them to threat small companies or individuals not able to afford a lawyer.

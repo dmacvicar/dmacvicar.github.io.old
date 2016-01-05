@@ -2,10 +2,7 @@
 layout: post
 title: Freedom and Privacy
 date: '2006-06-21'
-tags:
-- freedom
-- society
-- tech
+published: false
 ---
 
 >  "I worry about my child and the Internet all the time, even though she's too young to have logged on yet. Here's what I worry about.  

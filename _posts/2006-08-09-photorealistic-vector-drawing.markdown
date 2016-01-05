@@ -2,9 +2,7 @@
 layout: post
 title: Photorealistic vector drawing
 date: '2006-08-09'
-tags:
-- software
-- tech
+published: false
 ---
 
 ![Dibujo][2]

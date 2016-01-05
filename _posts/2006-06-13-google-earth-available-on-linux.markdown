@@ -2,8 +2,9 @@
 layout: post
 title: Google Earth available on Linux
 date: '2006-06-13'
-tags:
-- software
+categories:
+  - News
+published: false
 ---
 
 ![Google earth screenshot][4]

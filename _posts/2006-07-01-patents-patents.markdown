@@ -2,9 +2,7 @@
 layout: post
 title: Patents, Patents.
 date: '2006-07-01'
-tags:
-- business
-- open-source
+published: false
 ---
 
 Another boring case if a failure company that needs some cash so they go the "sue just in case we win" business model.

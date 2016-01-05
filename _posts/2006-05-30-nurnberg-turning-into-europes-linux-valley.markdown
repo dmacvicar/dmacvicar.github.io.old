@@ -2,11 +2,9 @@
 layout: post
 title: Nürnberg turning into Europe's "Linux Valley."?
 date: '2006-05-30'
-tags:
-- business
-- newsuse
-- suse
-- tech
+categories:
+  - News
+published: false
 ---
 
  ![]({{ site.baseurl }}/assets/images/posts/media_httpimg115image_eabea-scaled500.jpg)

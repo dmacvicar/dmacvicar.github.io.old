@@ -2,6 +2,7 @@
 layout: post
 title: Funny satire or social experiment?
 date: '2006-07-18'
+published: false
 tags:
 - blogging
 - politics

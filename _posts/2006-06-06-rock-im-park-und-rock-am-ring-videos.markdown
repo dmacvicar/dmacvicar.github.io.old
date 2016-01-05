@@ -2,6 +2,9 @@
 layout: post
 title: "-Rock im Park- und -Rock am Ring- Videos"
 date: '2006-06-06'
+categories:
+  - Journal
+published: false
 ---
 
 Rodrigo sent me this video link of Orion in Rock am Ring. I was in Rock im Park, but the show was exactly the same. After all I did not realize the video was from the previous day before I re-read the title.

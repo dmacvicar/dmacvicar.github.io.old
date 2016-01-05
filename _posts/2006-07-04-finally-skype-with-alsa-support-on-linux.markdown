@@ -2,9 +2,7 @@
 layout: post
 title: Finally, Skype with ALSA support on Linux
 date: '2006-07-04'
-tags:
-- open-source
-- software
+published: false
 ---
 
 Skype, the proprietary voice over internet application that works :-) has just released version 1.3 beta, which was probably the feature most Linux users were waiting.

@@ -2,9 +2,8 @@
 layout: post
 title: How to communicate with chilean people.
 date: '2006-05-31'
-tags:
-- chile
-- society
+categories:
+  - Chile
 ---
 
 [![][1]][1]

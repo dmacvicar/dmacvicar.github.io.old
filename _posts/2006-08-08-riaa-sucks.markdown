@@ -2,11 +2,9 @@
 layout: post
 title: RIAA sucks
 date: '2006-08-08'
-tags:
-- business
-- freedom
-- politics
-- society
+categories:
+  - Digital Society
+published: false
 ---
 
 Leo sent me this [interesting article][1] to learn how the RIAA suing machine works. You will be really dissapointed how easy is for those pigs to abuse the court system and randomly sue people.  

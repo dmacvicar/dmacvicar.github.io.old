@@ -2,9 +2,7 @@
 layout: post
 title: Google Checkout is out
 date: '2006-06-29'
-tags:
-- business
-- society
+published: false
 ---
 
 [Google checkout has been launched][1]. It allows any online shop to handle checkout and payment trough google. It seems pretty convienent as you won't need a unique password for every website.

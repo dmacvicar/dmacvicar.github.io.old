@@ -2,8 +2,7 @@
 layout: post
 title: Bilz & Pap world
 date: '2006-06-27'
-tags:
-- open-source
+published: false
 ---
 
 In Chile the expression "living in Bilz & Pap world" means living in a fantasy world, far from reality. How dangerous can be for a company when the people planning their strategies live there?

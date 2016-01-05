@@ -2,8 +2,9 @@
 layout: post
 title: Chile
 date: '2006-06-30'
-tags:
-- chile
+categories:
+  - Journal
+  - Chile
 ---
 
 People ask me a lot about my country. From questions like "do you have tap water there?" to people that just want to know how safe it is.

@@ -2,11 +2,9 @@
 layout: post
 title: Mi respuesta a Jovino Novoa respecto a la ley del spam
 date: '2006-07-12'
-tags:
-- chile
-- freedom
-- politics
-- spam
+categories:
+  - Chile
+published: false
 ---
 
 Puse un comentario en el [blog de Jovino Novoa][1] y estoy contento de que me respondió. Aquí blogueo mi respuesta:

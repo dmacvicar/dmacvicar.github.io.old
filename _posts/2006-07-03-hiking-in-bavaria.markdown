@@ -2,9 +2,9 @@
 layout: post
 title: Hiking in Bavaria
 date: '2006-07-03'
-tags:
-- germany
-- Life
+categories:
+  - Journal
+  - Germany
 ---
 
 Weekend trip! We started from Garmisch-Partenkirchen. From there we started hiking till [Höllentalhütte][3] (1.381 m). We had dinner (and knew that England was out of the WM2006) and slept there. Next day when waking up we were told about Brazil and France.

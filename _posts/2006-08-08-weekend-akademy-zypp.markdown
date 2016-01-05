@@ -2,8 +2,11 @@
 layout: post
 title: weekend, akademy, zypp
 date: '2006-08-08'
+categories:
+  - Journal
 tags:
-- Life
+  - KDE
+  - SUSE
 ---
 
 Busy weekend. Darts and billard with Loreto and Will on Friday. Will won all matches. Then some Playstation karaoke at Will's place. Lost twice against Lisann for only 10 points. It turned into a deathmatch. I will win next time.

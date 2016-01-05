@@ -2,9 +2,8 @@
 layout: post
 title: Soccer dying...
 date: '2006-07-11'
-tags:
-- germany
-- Life
+categories:
+  - Journal
 ---
 
 Well, Italy is the world-champion, and I must say they did quite good. I am also happy for Germany for the well deserved 3rd place.

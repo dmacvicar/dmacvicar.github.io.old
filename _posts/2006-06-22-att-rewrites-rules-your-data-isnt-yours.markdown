@@ -2,8 +2,9 @@
 layout: post
 title: 'AT&T rewrites rules: Your data isn''t yours'
 date: '2006-06-22'
-tags:
-- society
+categories:
+  - News
+published: false
 ---
 
 From slashdot:

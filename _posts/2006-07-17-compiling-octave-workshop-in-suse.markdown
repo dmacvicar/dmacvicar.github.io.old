@@ -2,11 +2,10 @@
 layout: post
 title: Compiling Octave Workshop in SUSE
 date: '2006-07-17'
+categories:
+  - Software
 tags:
-- newsuse
-- open-source
-- software
-- suse
+  - SUSE
 ---
 
 [Octave Workshop][3] is a nice Qt 4 GUI for [GNU Octave][2], a Matlab like numerical computation tool.
@@ -15,18 +14,18 @@ tags:
 
 To compile it in SUSE 10.1, get [this patch][1] and apply it to your installed Octave 2.1.72 headers:
 
-`
+```console
   linux:/usr/include/octave-2.1.72/octave # cat /home/duncan/octave.patch | patch -p0
   patching file ArrayN.h
   patching file DiagArray2.h
-`
+```
 
 Then in Octave Workshop, replace the assert for QT\_ASSERT in octave-workshop-0.10/editwindow.cpp
 
-`
+```diff
   - assert(editors.find(current)!=editors.end());
   + Q_ASSERT(editors.find(current)!=editors.end());
-`
+```
 
 then it should compile.
 

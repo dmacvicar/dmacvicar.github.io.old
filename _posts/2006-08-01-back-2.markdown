@@ -2,8 +2,11 @@
 layout: post
 title: Back
 date: '2006-08-01'
+categories:
+  - Journal
 tags:
-- newkde
+  - KDE
+  - SUSE
 ---
 
 Back from Boston. I was the whole week with Will and others from Nürnberg meeting with our collegues there. The travel was ok, including the obligatory delayed flights, lost connections and luggage arriving not in the same plane as the owner.

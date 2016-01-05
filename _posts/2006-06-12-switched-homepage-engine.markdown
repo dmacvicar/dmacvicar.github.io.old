@@ -2,8 +2,8 @@
 layout: post
 title: Switched homepage engine
 date: '2006-06-12'
-tags:
-- blogging
+categories:
+  - Journal
 ---
 
 My old homepage was a mixture of handmade php pages and the blog was powered by [blogger][1]

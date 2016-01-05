@@ -2,6 +2,7 @@
 layout: post
 title: The way to teach
 date: '2006-06-22'
+published: false
 ---
 
 Leonardo sent me [this link][1] where Oliver Steele shows some abasic algebra demonstrations in a graphical way. Really nice.
