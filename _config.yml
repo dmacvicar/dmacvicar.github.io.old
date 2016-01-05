@@ -1,5 +1,11 @@
 # General Jekyll Config
+markdown: redcarpet
 highlighter: pygments
-url: http://example.com
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+
+permalink: /:year/:month/:day/:title.html
+
+url: https://duncan.mac-vicar.com
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
