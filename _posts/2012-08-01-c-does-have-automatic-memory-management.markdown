@@ -4,6 +4,7 @@ title: C++ does have automatic memory management.
 date: '2012-08-01'
 categories:
   - Software
+comments: true
 ---
 
 Some weeks ago someone was discussing what language to use to write a small library. He wanted to go with C. I suggested using C++ for the implementation but keeping a pure C API is an interesting alternative. He said C++ added complexity but not benefits like Go would do with automatic memory management, and in that case C would be the best option.
