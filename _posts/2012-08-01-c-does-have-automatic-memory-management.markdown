@@ -107,7 +107,7 @@ template<class T> class Deleter
 
     T* operator-> ()
     {
-        return \_ptr;
+        return _ptr;
     }
 
 private:
@@ -139,7 +139,7 @@ Originally, you could get smart pointer implementations from the [boost smart po
 
 ### auto_ptr and unique_ptr
 
-The basic implementation I showed you before is provided by the standard library as std::auto\_ptr. With the only difference is that auto\_ptr is more robust and if it is copied, the original one loses the pointer (gets changed to 0) in order to avoid double deletion:
+The basic implementation I showed you before is provided by the standard library as std::auto_ptr. With the only difference is that auto_ptr is more robust and if it is copied, the original one loses the pointer (gets changed to 0) in order to avoid double deletion:
 
 ```c++
 #include <iostream>
@@ -176,9 +176,9 @@ std::shared_ptr​ adds reference counting, so if you copy it, it points to the 
 ```c++
 std::shared_ptr<SomeClass> p1(new SomeClass());
 std::shared_ptr<SomeClass> p2 = p1;
-```
 
 // the pointer will be deleted when both go out of scope and the reference count goes to 0
+```
 
 The problem with reference counting is that if two objects reference each other, then the counts never goes to zero. What you do in this case is that one has shared_ptr and the other uses a weak_ptr. A weak_ptr does not increase the reference count of the shared_ptr. When you want to access the underlying object, you can obtain a shared_ptr from the weak_ptr. But you will need to test the pointer first, as it may have been deleted.
 
