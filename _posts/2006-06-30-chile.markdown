@@ -1,0 +1,16 @@
+---
+layout: post
+title: Chile
+date: '2006-06-30'
+tags:
+- chile
+---
+
+People ask me a lot about my country. From questions like "do you have tap water there?" to people that just want to know how safe it is.
+
+So I created a small section with 2 links and 2 videos I found in the net, it could be nice to look at if you are interested to travel to South America someday, or you just want to know more about my country.
+
+The [new page is here][1].
+
+[1]: http://duncan.mac-vicar.com/blog/other/chile/
+

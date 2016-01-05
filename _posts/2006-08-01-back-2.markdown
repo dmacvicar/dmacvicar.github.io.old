@@ -1,0 +1,24 @@
+---
+layout: post
+title: Back
+date: '2006-08-01'
+tags:
+- newkde
+---
+
+Back from Boston. I was the whole week with Will and others from Nürnberg meeting with our collegues there. The travel was ok, including the obligatory delayed flights, lost connections and luggage arriving not in the same plane as the owner.
+
+ ![]({{ site.baseurl }}/assets/images/posts/media_httpstaticflick_jdcif-scaled500.jpg)
+
+I think the complete set has to improve, airlines+airports+border security can stress anybody. It can't be that you need to cross fingers to have a little hope that your luggage will arrive with you. It can't be that airports make airplanes wait one hour for parking place. And it can't be that you have to go trough a border security process where you have to fill your name and birthdate multiple times, check in and out luggage in connection flights, and answer lot questions plus fingerprints and photo. I agree such level is needed, but, the system should be fair so the same level of security applies for both directions.
+
+ ![]({{ site.baseurl }}/assets/images/posts/media_httpstaticflick_uavph-scaled500.jpg)
+
+I had the chance to meet Federico Mena and Rodrigo Moya. Both were in Chile some time ago, so they met Franco Catrin there and other Chilean developers. I got lot of profiling information from Federico. I hacked zypp milestone logging (we already log milestones) to use Federico's script to print the timeline. Sysprof talk was also very helpful.
+
+While my interest in the discussions where more focused in system administration and YaST, I had some nice talks with Rodrigo and others about desktop integration, and using Will's words, Desktop as a whole, not refering to any specific desktop implementation. KDE switch to dbus will help accelerate that, but I am sure Gnome can do some pragmatic steps forward some KDE technologies. As a Desktop community the "it uses glib" or "it links against QtCore" arguments have no longer the same weight but the end user experience, and I think Rodrigo got my point.  
+Will's discussion about cross desktop services (like gnome-keyring starting in KDE and kded in Gnome) as a configurable option for users using apps from both sides is also a point that needs to be improved.
+
+Meeting Robert Love was also really cool. He has one foot in the userpace land and the other in the kernel space, and that kind of reasoning is very helpful for the desktop. Technologies like inotify prove it. He also had cool sandals. Will liked them and bought the same ones.
+
+ ![]({{ site.baseurl }}/assets/images/posts/media_httpstaticflick_zriyr-scaled500.jpg)

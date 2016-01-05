@@ -1,0 +1,131 @@
+---
+layout: post
+title: Welcome 2008
+date: '2008-01-05'
+tags:
+- amazon
+- android
+- chile
+- europe
+- git
+- java
+- newkde
+- newsuse
+- packaging
+- politics
+- rpm
+- ruby
+- suse
+- usa
+- world
+---
+
+Some random thoughts about the world, and the past and following years.
+
+### Digital society
+
+2007 was quite active on the digital rights topic.
+
+The inability of the industry to catch up with the current society has created a war on digital rights. Software patents on one side. Digital music transformed music labels into mafias and consumers into rival groups. Politicians trying to implement surveillance systems everywhere.
+
+I have the feeling that we will see some progress on the music topic. Record labels will give up, but it will be too late, and if a bunch of major artists start to use some fair system. Something like amiestreet.com or direct selling comes to my mind.
+
+I don't think something will happen on patents.
+
+It was funny, some weeks ago I got an idea about using gps to associate location to todo items. This plays well with the getting things done methodology where you organize by contexts and not categories. I started prototyping some stuff on android.
+
+Sadly, I found out this simple idea [was patented][gps-todo-patent] by Fujitsu. Not only that. But I found [a program][naggie] which does that, and the website dissapeared. [Another news][place-mail] article about someone researching on the topic and developing a product on that also dissapeared from the map. However, I haven't yet seen a product from Fujitsu on the topic (the patent is 7 years old). Software patents destroy innovation. Thanks to that stupid patent, you won't see any product (unless free software) using that.
+
+### The web 2.0
+
+Everybody is sick of the Web 2.0 buzz. The Web 2.0 exists.
+
+It is normal that consultants/analysts start to invent new terms because their business depends on the next "big thing" that will "cut costs" and "save millions" to your company. They repeat the same year after year just replacing the term itself.
+
+However the amount of services on the web is growing really fast, and they are all accessible by really standard protocols. Software is becoming just a support medium and the value is being transfered to services: information, storage, security, etc.
+
+Now, there are new layers over that. Phones with [gps][wikipedia-gps] will bring a new dimension of services based on our location. This is very important. The information we store on the web becomes more relevant if we map it over real-world dimensions: location, time, mood, energy, context. Open source fits here, you can see companies like Google taking advantage of it.
+
+\*Question\*: How services will affect open source and/or free software itself? Google contributes quite a lot to open source software. But once you don't distribute the software, you are not forced to publish modifications. Will other companies follow this path?
+
+[Amazon Web Services][aws] is another topic. The way they sell on demand "computing power", "human processing", "databases" and "storage" is simply amazing.
+
+I would like to see more about "distributed" environments. I am disappointed on how I have to manage my information having 3 computers and one cell phone. There has to be something better than either being off-line and centralized or being online and ubiquitous (where network is available). I want to be ubiquitous, distributed, fail tolerant, and in a simple, pragmatic way. (I don't want to setup a cluster on my devices).
+
+What about the bubble?. Yes, there is a bubble. There are a bunch of companies that know what they are doing. And thousands of venture capital groups funding whoolalalhzuzu.com ajax websites which implement a calculator or whatever. Those dying is not a bubble, it is natural selection. Most people already know which ones will die after using them for 2 minutes.
+
+I am really excited about the developments in this area and looking forward what is coming here. The direction is clear.
+
+### Software
+
++ openSUSE / YaST
+
+I will leave this for a separate post.
+
++ KDE 4.0
+
+4.0 is being released in a few days and you will see the most brave release of free software ever. A big bunch of new technologies and visions collected, cooked and packed inside a great community. And better, there is still no big place for politics in KDE, but technical arguments and user experience. Not that all desktops could say the same.
+
+### Software Development
+
+Wow, what happened on 2007?
+
+* Software configuration / Version Control
+
+The growing complexity of open source codebases, plus the need to maintain them for enterprise purposes, brought the topic of version control really hard on the blog sphere. Every blog and developer talked about [git][git]. Lot of talk about mercurial and bzr too. 3 version control systems being popular at the same time? The point is that being "distributed" is "the thing". I personally switched to git, and it solved the "being distributed" part of working with 3 computers in different places. I want to see something like code.google.com with git support.
+
+* Android
+
+Brilliant. I am waiting for the first phone. Some APIs are ugly. But still prettier than [uggly guys][rim] that [reinvent the wheel poorly][bberry-jde], and worse, only on Windows.
+
+Nothing that spectacular on other old topics:
+
+* Java
+
+While Eclipse is a jewel. Sun is getting better but too slow to move. So slow that it is getting boring to watch.
+
+* Ruby
+
+We saw the release of ruby 1.9 on December, a very important milestone. At the same time, JRuby is now fast and very compatible, and other implementations are also very active.
+
+* C++
+
+Even more boring than Java eh?
+
+### Politics
+
+* Chile
+
+The goverment of [Michelle Bachelet][bachelet] whose goverment improvisation has made the country again miss the opportunity to develop quickly. Michelle has no strategy at all, so the hope for 2008 is that his sucking team don't make more mistakes. The public transport system ( [Transantiago][transantiago] ) has to start working somehow (both in operation and budget), because till now, it is a joke.
+
+The opposition hasn't a good alternative. Nobody is willing to make the important change: universal \*free\* and \_good\_ education, health and social care. Even Michelle, being a socialist, uses the private health and education system.
+
+* Europa
+
+Spain's election coming. Seems that Zapatero will be reelected, which seems reasonable. I am a little lost with german politics and I feel like living in a fantasy world. Time to change that. Still, Europe's economy is going good and living here is awesome. I love it.
+
+* USA
+
+Discussions on whether they should teach [non-science][id] on science class?. War. etc. Uhm... was I writing about a middle west country? I am sad, really sad to see a beautiful country being destroyed, destroying, hating and being hated by almost the entire world, and even worse, considered the biggest threat to the rest of the world.
+
+From latimes.com:
+
+> 36% of European poll respondents — who come from Italy, France, Germany, Britain, and Spain consider America as the No. 1 danger to world peace. Even 35% of American 16- to 24-year-olds identify their own country as the chief danger to peace.  
+ \>The poll was consistent with findings by the Pew Global Attitudes Project, which found that favorable ratings of the U.S. had declined in 26 of 33 countries over the last five years.  
+ \>Europeans next concerns are China, 19%; Iran 17%; Iraq 11%; North Korea 9%; Russia 5%.
+
+Elections aren't this year. Lets see how it goes.
+
+[naggie]: http://www.naggie.com  
+[place-mail]: http://www.engadget.com/2005/06/09/place-mail-location-sensitive-to-do-list-for-cellphones/  
+[plasma-bus]: http://tokoe-kde.blogspot.com/2007/12/never-miss-bus-again-with-plasma.html  
+[aws]: http://www.amazon.com/gp/browse.html?node=3435361  
+[wikipedia-gps]: http://en.wikipedia.org/wiki/Global_Positioning_System  
+[gps-todo-patent]: http://www.google.com/patents?id=9CYSAAAAEBAJ&dq=6680675  
+[git]: http://git.or.cz/  
+[rim]: http://www.rim.com/  
+[bberry-jde]: http://na.blackberry.com/eng/developers/downloads/jde.jsp  
+[transantiago]: http://en.wikipedia.org/wiki/Transantiago  
+[bachelet]: http://en.wikipedia.org/wiki/Michelle_Bachelet  
+[id]: http://en.wikipedia.org/wiki/Intelligent_design
+

@@ -1,0 +1,35 @@
+---
+layout: post
+title: Busy week
+date: '2007-05-11'
+tags:
+- Life
+- newsuse
+- software
+- suse
+---
+
+This has been a really busy week. Moving to a new apartment. At home I only see boxes everywhere :-(
+
+Lot of news coming from the Java field. I am happy for what is happening with the Java world.
+
+* The strategy for Solaris finally makes some sense: making it like Linux, but with its own strengths. Everyone will win here. (it will be GPL soon][1] ). The only looser will be Microsoft and whose can't use GPL code. I am not sure if the strategy is right, but making Sun a player with both Linux and Solaris is much better than the "Linux, eeer Solaris, er Linux... Solaris!... Linux!" strategy.  
+* Flash and Silverlight will get a competitor from [Sun and the Java world][2]. This is good news for Linux, as it can be the first [free solution][3] on this platform. Watch the [demos][4].  
+* Platform [for cellphones][5].  
+* [There is a video of a Google Earth][8] like client done by Sun and NASA, based on the new FX technologies. It will be free and can be used as a component in Java programs.
+
+Also:
+
+* Give a look to this [Xen virtual machine manager][6] (Enomalism) and the [vmcasting rss based format][7]  
+* [PlanetSUSE][9] has a new logo
+
+[1]: http://www.eweek.com/article2/0,1895,2084284,00.asp  
+ [2]: http://www.sun.com/software/javafx/index.jsp  
+ [3]: https://openjfx.dev.java.net/  
+ [4]: https://openjfx.dev.java.net/#demos  
+ [5]: http://www.informationweek.com/story/showArticle.jhtml?articleID=199500131  
+ [6]: http://www.enomalism.com  
+ [7]: http://www.vmcasting.org/  
+ [8]: http://news.com.com/1606-2_3-6182308.html?tag=ne.video.6182184  
+ [9]: http://www.planetsuse.org/
+

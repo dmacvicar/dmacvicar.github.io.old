@@ -1,0 +1,8 @@
+---
+layout: post
+title: back
+date: '2006-08-15'
+---
+
+Well, I blamed my harddrive, but it was the Factory kernel. I booted with a livecd and fsck.ext3 found no problem accessing the drive. Booting the installed system using the 10.1 DVD kernel worked. Now I have to find out why the new kernel has this regression in Factory, and look for a replacement kernel as I don't want to keep booting from CD and manually load drivers.
+

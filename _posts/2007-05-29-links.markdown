@@ -1,0 +1,15 @@
+---
+layout: post
+title: Links
+date: '2007-05-29'
+tags:
+- software
+---
+
+* [What the Web’s most popular sites are running on][1]. (TechCrunch, FeedBurner, iStockPhoto, YouSendIt, Meebo, Vimeo and Alexaholic) [pdf matrix][2].  
+* [Make XP look like Vista or other OSs][1]
+
+[1]: http://www.crystalxp.net/bricopack/fr.htm  
+ [2]: http://royal.pingdom.com/royalfiles/0702_infrastructure_matrix.pdf  
+ [3]: http://royal.pingdom.com/?p=95
+

@@ -1,0 +1,20 @@
+---
+layout: post
+title: Dead blog
+date: '2008-08-13'
+tags:
+- wordpress
+---
+
+Long time since I haven't blogged.
+
+The server where I have my blog suffered a big crash, and after they had reenabled most services, the status of the databases was unclear. For some days, my blog was gone, forever.
+
+I had some backup, and also experimented recreating it from google cache using a html parser using [hpricot][1]. I was successful in recreating an atom feed from there, but had no much luck with the comments (because atom comments are not very standard). Well, I learned a lot on the way :-)
+
+At the end, the sysadmins were able to recover everything, and my blog came to life again, except for some encoding issue that crashed wordpress, which was solved by the sysadmins without any intervention (thanks guys).
+
+So here I am, back. I will be posting some stuff I had on the queue.
+
+[1]: http://code.whytheluckystiff.net/hpricot/
+

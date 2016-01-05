@@ -1,0 +1,20 @@
+---
+layout: post
+title: Bastards
+date: '2007-01-28'
+tags:
+- business
+- freedom
+- patents
+- politics
+- software
+---
+
+It seems Microsoft has not only been patenting obvious stuff lately but now they are trying to patent innovation done by other people.
+
+* [They are trying to patent RSS readers][2]  
+* They copied all features of BlueJ into Visual Studio, admitted it, and then applied for a patent. [Read about it here][1].
+
+[1]: http://www.bluej.org/mrt/?p=21  
+ [2]: http://mashable.com/2006/12/21/microsoft-tries-to-patent-rss-readers/
+

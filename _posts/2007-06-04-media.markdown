@@ -1,0 +1,27 @@
+---
+layout: post
+title: Media
+date: '2007-06-04'
+tags:
+- chile
+- freedom
+- society
+---
+
+* Traveling to Chile
+
+In various occasions, when asking Europeans why they haven't been in Chile, they answer "it is too dangerous, isn't it?". Sadly, the European media only broadcast news from South America related to poverty, Colombia's guerrilla, Mapuche's conflict, etc. The image created on people's brain is only based on that "picture". Add to that the horrible job [our tourism office][4] does.
+
+However, most people here travel to Spain and feel quite secure. This makes sense. Spain is #21 on [Global Peace Index Ranking][2]. Did you know Chile is #16 ?.
+
+* [Venezuela : Democracy via YouTube][3]
+
+> When YouTube CEO Chad Hurley told a Congressional committee that his company "advances democracy," perhaps this was the sort of thing he had in mind.  
+>   
+> An opposition Venezuelan television station whose broadcast license has not been renewed by the government is now turning to YouTube to get its message out after its transmitter was taken over by a state-run channel. Hugo Chavez's "Bolivarian Revolution" has no time for media groups that criticize his government; Radio Caracas Televisión (RCTV) is now off the air, and another channel, Globovision, could be next, according to CNN.
+
+[1]: http://www.elpais.com/articulo/internacional/Noruega/coronada/pais/pacifico/elpepuint/20070601elpepuint_13/Tes  
+ [2]: http://www.visionofhumanity.com/rankings/  
+ [3]: http://arstechnica.com/news.ars/post/20070601-the-counter-revolution-wont-be-televised-but-it-will-be-on-youtube.html  
+ [4]: http://www.sernatur.cl/
+

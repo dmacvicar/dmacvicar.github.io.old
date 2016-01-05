@@ -1,0 +1,14 @@
+---
+layout: post
+title: Snow!
+date: '2005-11-19'
+---
+
+ ![]({{ site.baseurl }}/assets/images/posts/media_httpstaticflick_ijcck-scaled500.jpg)
+
+yeah, nothing uncommon for most people, but for me it is really new!. And we are still in autum.
+
+The picture is not really good. It was taken by a collegue with a cell phone. The shutter is unable to catch the falling snow. But you can already notice some white color on the trees.
+
+Anyway it is really good. The previous days were dark, cold, with dark clouds.
+

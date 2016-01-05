@@ -1,0 +1,21 @@
+---
+layout: post
+title: various
+date: '2006-12-13'
+tags:
+- chile
+- politics
+- society
+---
+
+* openSUSE 10.2 had a great reception. The feedback about the light updater and YaST improvements are positive.  
+* What do you think Chile's media and people is talking about? [Blogged it apart][1].  
+* My brother sent me this [video of Hans Rosling at TED Conference 2006][2]. Check [this website][3] after seeing the video.  
+* Nürnberg is starting to freeze  
+* Bought the [Rapid GUI Development with QtRuby][4] book, but still haven't had time to look at it. I have played with QtRuby a lot anyway.
+
+[1]: http://duncan.mac-vicar.com/blog/archives/159  
+ [2]: http://video.google.com/videoplay?docid=2670820702819322251&q=ted+talk  
+ [3]: http://www.gapminder.org/  
+ [4]: http://www.pragmaticprogrammer.com/titles/ctrubyqt/
+
