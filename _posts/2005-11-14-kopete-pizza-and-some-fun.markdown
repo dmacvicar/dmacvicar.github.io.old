@@ -2,6 +2,10 @@
 layout: post
 title: Kopete, Pizza and some fun
 date: '2005-11-14'
+categories:
+  - Journal
+tags:
+  - KDE
 ---
 
  ![]({{ site.baseurl }}/assets/images/posts/media_httpstaticflick_lywfg-scaled500.jpg)

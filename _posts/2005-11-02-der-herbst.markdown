@@ -2,6 +2,8 @@
 layout: post
 title: der Herbst
 date: '2005-11-02'
+categories:
+  - Journal
 ---
 
 Autumn here is really Autumn. Colors are strong. There are no leaves on the ground. There are ton of them. Red, brown, yellow and green get mixed with fury everywhere.
