@@ -3,9 +3,10 @@ layout: post
 title: Docker with overlayfs on openSUSE
 date: '2015-05-05'
 categories:
-- Software
+  - Software
 tags:
-- docker
+  - Docker
+  - SUSE
 ---
 
 Docker works better with an union filesystem, but the most popular one (aufs) is not included in the mainline kernel because of stability issues.
