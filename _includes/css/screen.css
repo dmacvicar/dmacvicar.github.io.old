@@ -143,6 +143,12 @@ nav h1, nav h2 {
   border: none;
 }
 
+#post img {
+  outline: 0;
+  max-width: 100%;
+  height: auto;
+}
+
 .sidebar {
   padding-top: 25px;
   font-family: "open sans", sans-serif;
