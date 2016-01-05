@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/dmacvicar
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://duncan.mac-vicar.com
+  * I am dmacvicar (https://keybase.io/dmacvicar) on keybase.
+  * I have a public key with fingerprint FFA0 4ED5 BB5A E6F1 5CDD  6ED9 F35B 9C19 76E9 10E3
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01011d366345a6c62cc350dfd45e2f008551994b9a9770aeaf8c05a7196e6d46772c0a",
+            "fingerprint": "ffa04ed5bb5ae6f15cdd6ed9f35b9c1976e910e3",
+            "host": "keybase.io",
+            "key_id": "f35b9c1976e910e3",
+            "kid": "01011d366345a6c62cc350dfd45e2f008551994b9a9770aeaf8c05a7196e6d46772c0a",
+            "uid": "013e0a0a152d8e8a2986bbccb5175e00",
+            "username": "dmacvicar"
+        },
+        "service": {
+            "hostname": "duncan.mac-vicar.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1451580972,
+    "expire_in": 157680000,
+    "prev": "5738dee72b80159829c6de2fd0376e175b3c1f0257b6606ed902f2281fda35fb",
+    "seqno": 17,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+owGtkm9oTlEcx5+HGVMYI5N54Woiz9Y59z7n/nloe7FmiWQvDJGn8+9ut233Pu69
+mz2tx58xay/8yZ8SEqOUJM02869GbCR/QpHxLIohaShFmHMX77x03pxzfn1+3/P9
+/c5vz4TRoXHh4c6m0lhRwabwnXckVNG8HjZKxGFJKdYoVfORjdcw7vnxaotJMQlA
+ACFTVFWJIqxSVaZUQYCZLIq4bAKgIwQNI0oMbGgawBybOgUIa9BQucqiqqbJFGAp
+IpmWXcndhGvZvpA1TQyinCFCEOaqCRFlTOXMMBVEDAoNTeUGBFwRiVWOF2QIcwR7
+vNByRExc4iP2/sH/Z991f+QUDjDAEMlM5zqWDV0lhFKCoIY4AAHocdfGtVzQrBbT
+eotiV0pFJBEWZx50NijlL1JnU2wXCrBghCykTq0QSbiO71CnRhBVvp/wYoGCn0wE
+KRs5if8RixPLZqKhIqOeu57l2FIMCpL6VqAOowgiHRiaHJF4Q8JyedwKCKSpOhAr
+eIfXSyQmIU3RGeeaTHQAkaHLBlWZaBADimipqI0oFJpARhpRVRD8EJBNWdahybCC
+TCIF9W2wHSGuCaO4Uvj0rEob+3Uul1LjW8N5GaHwuFDmmFHBrIXGZ2X/HcDW5WOH
+q+es7XiDho7NaCh4mO5Xvl7uzAzlwl29n8LylrMz5NyyyvpDg039+67snnbEO/3x
+nh9ZX/whc2fZitV3c3ZdXvm6ZGv3ukUX807cLV+S13V4TcvDkr1Ph78M5FcsXftk
+qPTW0R4FbT5ZEetrBr3Xbpf13N5x4PyZF4tLDteEI4s+328wk8rAo/TBtgnpvoGF
+U07dcYu3DZX/lJomtS2rO5RqW+C0l+bUdl01Y/Nbbk7O/jVr3luSEUl5WekH1wcb
++18uSS3vvaFMn1qM3y+b2fcqO/lt98mi77Pm7ug4tR2kb11/fOFX+bOc4z3Oqv0Z
+E5OXzuVfzJz4A3XP/p7/vLe9JH92pPs3
+=PnF+
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dmacvicar
+
+==================================================================
+
