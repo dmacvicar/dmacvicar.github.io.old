@@ -15,13 +15,13 @@ By [Andrew Wafaa](http://www.wafaa.eu/)'s [request](https://twitter.com/#!/awafa
 
 Save the package list:
 
-`
+```console
 dmacvicar@piscola:~> rpm -qa --queryformat="%{name}\n" > 1
-`
+```
 
 Do something... like uninstalling what was cool last week and it is not cool anymore:
 
-`
+```console
 dmacvicar@piscola:~> sudo zypper rm erlang
 Loading repository data...
 Reading installed packages...
@@ -36,22 +36,23 @@ Continue? [y/n/?] (y): y
 Removing rabbitmq-server-2.2.0-1.2 [done]  
 Removing erlang-R14B-1.2 [done]  
 There are some running programs that use files deleted by recent upgrade. You may wish to restart some of them. Run 'zypper ps' to list these programs.
+```
 
 Save the new state:
 
-`
+```console
 dmacvicar@piscola:~> rpm -qa --queryformat="%{name}\n" > 2
-`
+```
 
 Now you need to know that zypper accepts + and - in its input. You can install and uninstall packages in one go:
 
-`
+```console
 zypper in -- +pkg1 -pkg2 +pkg3 ...
-`
+```
 
 So we can diff both files:
 
-`
+```console
 dmacvicar@piscola:~> diff -u 1 2
 --- 1	2012-01-19 17:23:26.640180000 +0100
 +++ 2	2012-01-19 17:24:43.196248000 +0100
@@ -71,21 +72,21 @@ dmacvicar@piscola:~> diff -u 1 2
  libeet-devel
  cyrus-sasl-gssapi
  libimobiledevice2
-`
+```
 
 Close to what we need. We remove the context lines by using -u0 and we remove the 3 first lines:
 
-`
+```console
 dmacvicar@piscola:~> diff -u0 1 2 | grep -Ev '^(@@|\+\+|--)'
 -rabbitmq-server
 -erlang
-`
+```
 
 Now feed zypper with this to get your packages back:
 
-`
+```console
 zypper in -- $(diff -u0 2 1 | grep -Ev '^(@@|\+\+|--)' | xargs)
-`
+```
 
 Of course this only will work if you have all repositories. It is also useful to sync packages across computers (like you get a new laptop and need to setup it in a similar way).
 
