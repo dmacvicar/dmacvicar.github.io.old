@@ -5,11 +5,10 @@ date: '2014-01-16'
 categories:
 - Software
 tags:
+- SUSE
 - golang
 - llvm
-- opensuse
 - rust
-- suse
 ---
 
 I am always playing with new languages. I love learning the thinking and philosophy behind them. Usually I throw them away after one evening (mostly mee-too's), but there are some that are very interesting and get explored a bit further, and some are of course "adopted" into your toolbox.
@@ -45,12 +44,15 @@ But 0.9 was just released and this time I found some [very](https://build.opensu
 
 This is very similar how the Java package is structured. I also built a package for rust-bindgen, which uses [clang](http://clang.llvm.org/) to parse headers and generate bindings for C libraries.
 
-So, grab one of the [repositories](http://download.opensuse.org/repositories/home:/dmacvicar:/rust/)&nbsp;and:
+*08.01.2016 - Updated repository URLs and package name*
 
-[code language="bash"]  
-zypper ar&nbsp;http://download.opensuse.org/repositories/home:/dmacvicar:/rust/openSUSE\_13.1/home:dmacvicar:rust.repo  
-zypper ref  
-zypper install rust
+So, grab one of the [repositories](http://download.opensuse.org/repositories/devel:/languages:/rust/) and:
+
+```console
+zypper ar http://download.opensuse.org/repositories/devel:/languages:/rust/openSUSE_Tumbleweed/devel:languages:rust.repo
+zypper ref
+zypper install rustc
+```
 
 Then continue with the [tutorial](http://doc.rust-lang.org/doc/0.9/tutorial.html) and the [manual](http://doc.rust-lang.org/doc/0.9/rust.html). Happy learning!.
 
