@@ -1,8 +1,6 @@
 # General Jekyll Config
-markdown: redcarpet
-highlighter: pygments
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+markdown: kramdown
+highlighter: rouge
 
 permalink: /:year/:month/:day/:title.html
 
