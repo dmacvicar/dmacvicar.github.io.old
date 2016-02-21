@@ -13,7 +13,7 @@ This is a common miss-understanding. Modern C++ **does have** automatic memory m
 
 Consider the following:
 
-```c++
+```cpp
 void someFunction()
 {
     SomeClass \*obj = new SomeClass();
@@ -30,7 +30,7 @@ The problem begins with exceptions. If the code between the allocation and the _
 
 RAII is a name I dislike. Stands for "Resource Acquisition Is Initialization", but is a powerful concept in C++: The language guarantees that the destructor gets called for an object that is allocated on the stack when it goes out of scope.
 
-```c++
+```cpp
 // global mutex
 Mutex mutex;
 
@@ -44,7 +44,7 @@ void someFunction()
 
 Here we have the same problem. If an exception is thrown, the mutex is never unlocked!. Lets create a solution based on the concept of RAII.
 
-```c++
+```cpp
 class Lock
 {
     Lock(Mutex *m)
@@ -64,7 +64,7 @@ private:
 
 And now incorporate it into the code:
 
-```c++
+```cpp
 void someFunction()
 {
     Lock lock(&mutex);
@@ -78,7 +78,7 @@ Now imagine you want to extend this to various classes that can provide lock() a
 
 So how can this concept be used for memory management. Lets take the _Lock_ and implement a _Deleter_ from it. We will use a template:
 
-```c++
+```cpp
 template<class T> class Deleter
 {
     Deleter(T *ptr)
@@ -99,7 +99,7 @@ See? it is the same as the _Locker_ but not lock() call, and instead of unlock()
 
 Now, you may ask yourself, what is the usefulness of having the pointer wrapped into another object. True. Lets provide access to it. Thanks to C++ operator overloading, we can overload the -\> operator which is the one we already use when working with pointers.
 
-```c++
+```cpp
 template<class T> class Deleter
 {
     // ...
@@ -117,7 +117,7 @@ private:
 
 Now we can access the underlying pointer in a natural way. Exactly the same as we would use it if it was naked and not wrapped in this smart deleter:
 
-```c++
+```cpp
 void someFunction()
 {
     Deleter<SomeClass> ptr(new SomeClass());
@@ -141,7 +141,7 @@ Originally, you could get smart pointer implementations from the [boost smart po
 
 The basic implementation I showed you before is provided by the standard library as std::auto_ptr. With the only difference is that auto_ptr is more robust and if it is copied, the original one loses the pointer (gets changed to 0) in order to avoid double deletion:
 
-```c++
+```cpp
 #include <iostream>
 #include <memory>
 using namespace std;
@@ -163,7 +163,7 @@ int main(int argc, char **argv)
 
 In C++11 auto+ptr was deprecated (but still available) and replaced to std::unique_ptr which can't be copied, but the pointer can be transferred.
 
-```c++
+```cpp
 std::unique_ptr<SomeClass> p1(new SomeClass());
 std::unique_ptr<SomeClass> p2 = p1; // this will not compile
 std::unique_ptr<SomeClass> p3 = std::move(p1); // You can manually transfer it though, and p1 will be set to 0
@@ -173,7 +173,7 @@ std::unique_ptr<SomeClass> p3 = std::move(p1); // You can manually transfer it t
 
 std::shared_ptr​ adds reference counting, so if you copy it, it points to the same pointer but the reference count gets increased. When the last one gets destructed the pointer is deleted.
 
-```c++
+```cpp
 std::shared_ptr<SomeClass> p1(new SomeClass());
 std::shared_ptr<SomeClass> p2 = p1;
 
