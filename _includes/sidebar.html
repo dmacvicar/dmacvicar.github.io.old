@@ -2,15 +2,15 @@
   <h1>Hi.</h1>
   <a href="/">
     {% if site.data.theme.social.gravatar %}
-    <img src="https://www.gravatar.com/avatar/{{ site.data.theme.social.gravatar }}?s=200" id="gravatar" alt="My photo"/>
+    <img src="https://www.gravatar.com/avatar/{{ site.data.theme.social.gravatar }}?s=80" class="avatar" alt="My photo"/>
     {% else %}
     <img src="/logo.png" id="logo" alt="Blog logo"/>
     {% endif %}
   </a>
-  <h2>I'm <a href="/">{{ site.data.theme.name }}</a>.</h2>
+  <h2>I'm <a href="/">{{ site.data.theme.name }}</a></h2>
   <div id="bio">
-    <p>I am inspired by creating software. I do that mostly at <a href="https://www.suse.com">SUSE</a>.</p>
-    <p>When things break, I fix them or go play guitar...</p>
+    <p><small>I am inspired by creating software. I do that mostly at <a href="https://www.suse.com"><!--img src="https://www.suse.com/common/img/suse_54x33.png" height="33" width="54" style="float: left;"-->SUSE</a>.</p>
+    <p>When things break, I fix them or go play guitar...</small></p>
   </div>
   <div id="social">
     {% include social.html %}
