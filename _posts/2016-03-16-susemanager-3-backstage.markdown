@@ -32,7 +32,7 @@ After we decided that we would bring this new world into the existing SUSE Manag
 
 And here is where things got even less sweet: they got *salty!*
 
-We ended choosing [Salt](http://saltstack.com/community/). The reasons are endless: From its vibrant community to the "aha!" moment you get when understanding its internals and seeing the vision behind the architecture. It is a complete toolkit to build datacenter automation, wrapped in usable tools with sane defaults that work out-of-the-box.
+We ended up choosing [Salt](http://saltstack.com/community/). The reasons are endless: From its vibrant community to the "aha!" moment you get when understanding its internals and seeing the vision behind the architecture. It is a complete toolkit to build datacenter automation, wrapped in usable tools with sane defaults that work out-of-the-box.
 
 > SaltStack platform or Salt is a Python-based open source configuration management software and remote execution engine. Supporting the "Infrastructure as Code" approach to deployment and cloud management, it competes primarily with Puppet, Chef, and Ansible. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Salt_(software))]
 
