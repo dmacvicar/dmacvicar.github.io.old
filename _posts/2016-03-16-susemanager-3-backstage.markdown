@@ -12,7 +12,7 @@ hide: true
 
 ## Introduction
 
-During the last year we have been working on SUSE Manager 3, the next release of [SUSE's Systems Management product](https://www.suse.com/products/suse-manager/), which includes additional capabilities around Configuration Management and Complaince. This article details this journey from the team's perspective that may be of interest of product enthusiasts and developers.
+During the last year we have been working on SUSE Manager 3, the next release of [SUSE's Systems Management product](https://www.suse.com/products/suse-manager/), which includes additional capabilities around Configuration Management and Compliance. This article details this journey from the team's perspective that may be of interest of product enthusiasts and developers.
 
 ## Sweet did not last
 
