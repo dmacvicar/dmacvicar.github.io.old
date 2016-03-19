@@ -166,4 +166,4 @@ We are very excited about the posibilities here, which will be guided by feedbac
 
 ## To be continued
 
-Configuration Management is only one of the features that will arrive SUSE Manager 3. Expect to hear from the powerful Subscription Compliance and Topology Awareness in future posts.
+Configuration Management is only one of the features that will arrive SUSE Manager 3. Expect to hear from the powerful Subscription Matching and Topology Awareness in future posts.
