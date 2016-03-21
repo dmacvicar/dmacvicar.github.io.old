@@ -18,13 +18,13 @@ During the last year we have been working on SUSE Manager 3, the next release of
 
 In mid-2014 I wrote about [SUSE Manager 2.1]({% post_url 2014-06-11-suse-manager-2-1 %}). It was an important release for us because at that point we became very active upstream, to the point that on an usual day, a considerable chunk of the open pull requests came from SUSE, including a refreshed mobile-enabled user interface.
 
-But the world is changing, and management offerings are taking new innovative directions, especially around Configuration Management and Compliance. This trend was in several dimensions quite radical for our product, based on the [Spacewalk](http://spacewalk.redhat.com/) project, which has been managing Linux system with the same paradigm since 2008.
+But the world is changing, and management offerings are taking new innovative directions, especially around Configuration Management and Compliance. This trend was in several dimensions quite radical for our product, based on the [Spacewalk](http://spacewalk.redhat.com/) project, which has been managing Linux systems with the same paradigm since 2008.
 
-Deploying a management solution is a considerable investement for the customer: operation, training, processes, etc. Telling the customer you will completely replace their deployed solution because new trends appeared means you are throwing all these efforts to the trash.
+Deploying a management solution is a considerable investment for the customer: operation, training, processes, etc. Telling a customer you will be completely replacing their deployed solution because new trends have appeared means you are throwing all their efforts in the trash.
 
 On the other hand, it is very easy to find excuses to rewrite software from scratch and there are [well-known industry voices giving advice](http://www.joelonsoftware.com/articles/fog0000000069.html) on the topic.
 
-So we set ourselves the challenge, can we evolve SUSE Manager iteratively into this new world without hurting our customer investments?.
+So are we up to the challenge?. Can we evolve SUSE Manager iteratively within this new world without endangering our customer investments?
 
 ## Choosing a configuration management engine
 
