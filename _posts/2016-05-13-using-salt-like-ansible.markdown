@@ -18,9 +18,11 @@ When at SUSE we chose Salt [as the configuration management engine for SUSE Mana
 
 The first part of the answer had to do that the master-minion architecture of Salt has as consequence a lot of interesting features and synergies with the way SUSE Manager operates: real-time management, event-bus, etc.
 
+![Salt 0mq]({{ site.baseurl }}/assets/images/posts/2016-05-13-using-salt-like-ansible/salt-0mq.png)
+
 For example, you can create more scalable topoligies using the concept of syndics:
 
-![Salt 0mq]({{ site.baseurl }}/assets/images/posts/2016-05-13-using-salt-like-ansible/salt-syndic.png)
+![Salt syndic]({{ site.baseurl }}/assets/images/posts/2016-05-13-using-salt-like-ansible/salt-syndic.png)
 
 Or manage dumb devices with the concept of Salt proxies:
 
