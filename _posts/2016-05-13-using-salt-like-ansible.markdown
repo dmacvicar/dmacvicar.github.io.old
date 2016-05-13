@@ -47,6 +47,8 @@ The salt package is made of various components, among others:
 
 If you want to run Salt like Ansible, you only need to install `salt` and `salt-ssh` in your machine (the machine where you want to run tasks from).
 
+*You don't need anything else than Python on the hosts you will manage.*
+
 Salt is available out of the box on [openSUSE Leap and Tumbleweed](https://www.opensuse.org/) so if you are using them just type:
 
 ```console
@@ -141,26 +143,324 @@ Just like the Ansible tutorial covers, `salt-ssh` also has options to change the
 ## Modules
 
 >Ansible uses "modules" to accomplish most of its Tasks. Modules can do things like install software, copy files, use templates and much more.
+>
+>If we didn't have modules, we'd be left running arbitrary shell commands like this:
 
-The equivalent in Salt is called "modules" as well. There are two types of modules: [Execution modules](https://docs.saltstack.com/en/latest/ref/modules/) and [State modules](https://docs.saltstack.com/en/latest/ref/states/writing.html). Execution modules are *imperative actions* (think of *install!*). State modules are used to build idempotent declarative state (think of *installed*).
+```console
+ansible all -s -m shell -a 'apt-get install nginx'
+```
+
+>However this isn't particularly powerful. While it's handy to be able to run these commands on all of our servers at once, we still only accomplish what any bash script might do.
+>
+>If we used a more appropriate module instead, we can run commands with an assurance of the result. Ansible modules ensure indempotence - we can run the same Tasks over and over without affecting the final result.
+>
+>For installing software on Debian/Ubuntu servers, the "apt" module will run the same command, but ensure idempotence.
+>
+
+```console
+ansible all -s -m apt -a 'pkg=nginx state=installed update_cache=true'
+127.0.0.1 | success >> {
+    "changed": false
+}
+```
+
+The equivalent in Salt is also called "modules". There are two types of modules: [Execution modules](https://docs.saltstack.com/en/latest/ref/modules/) and [State modules](https://docs.saltstack.com/en/latest/ref/states/writing.html). Execution modules are *imperative actions* (think of *install!*). State modules are used to build idempotent declarative state (think of *installed*).
 
 There are two execution modules worth to mention:
 
-* The `cmd` module, which you can use to run shell commands when you want to accomplish something that is not provided by a built-in execution module.
+* The `cmd` module, which you can use to run shell commands when you want to accomplish something that is not provided by a built-in execution module. Taking the example above:
+
+```console
+salt-ssh '*' cmd.run 'apt-get install nginx'
+```
+
 * The `state` module, which is the execution module that allows to apply state modules and more complex composition of states, known as `sls` files.
 
->If we didn't have modules, we'd be left running arbitrary shell commands like this:
->```console
->ansible all -s -m shell -a 'apt-get install nginx'
->```
+```console
+salt-ssh '*' pkg.install nginx
+```
+
+You don't need to use the `apt` module, as it implements the virtual `pkg` module. So you can use the same module on every platform.
+
+On Salt you would normally use the non-idempotent execution modules from the command line and use the idempotent state module in `sls` files (equivalent to Ansible's playbooks).
+
+If you still want to apply state data like ansible does it:
+
+```console
+salt-ssh '*' state.high '{"nginx": {"pkg": ["installed"]}}'
+```
+
+## Basic Playbook
+
+>[Playbooks](http://docs.ansible.com/playbooks_intro.html) can run multiple Tasks and provide some more advanced functionality that we would miss out on using ad-hoc commands. Let's move the above Task into a playbook.
+
+The equivalent in Salt is found in [states](https://docs.saltstack.com/en/latest/topics/tutorials/starting_states.html).
+
+Create `srv/salt/nginx/init.sls`:
+
+```yaml
+nginx:
+  pkg.installed
+```
+
+To apply this state, you can create a [`top.sls`](https://docs.saltstack.com/en/latest/ref/states/top.html):
+
+```yaml
+base:
+  `*`:
+    - nginx
+```
+
+This means, all hosts should get that state. You can do very [advanced targetting of minions](https://docs.saltstack.com/en/latest/ref/states/top.html#advanced-minion-targeting). When you write a top, you are defining what it will be the `highstate` of a host.
+
+So when you run:
+
+```console
+salt-ssh '*' state.apply
+```
+
+You are applying the highstate on all hosts, but the highstate of each host is different for each one of them. With the salt-ssh command you are defining which hosts are getting their configuration applied. *Which* configuration is applied is defined by the `top.sls` file.
+
+You can as well apply a specific state, even if that state does not form part of the host highstate:
+
+```console
+salt-ssh '*' state.apply nginx
+```
+
+Or as we showed above, you can use `state.high` to apply arbitrary state data.
+
+## Handlers
+
+Salt has a similar concept called [events and reactors](https://docs.saltstack.com/en/latest/topics/reactor/) which allow you to define a fully reactive infrastructure.
+
+For the example given here, a simple state [`watch`](https://docs.saltstack.com/en/latest/ref/states/requisites.html#watch) [argument](https://docs.saltstack.com/en/latest/ref/states/requisites.html) will suffice:
+
+```yaml
+nginx:
+  pkg.installed: []
+  service.running:
+    - watch: pkg: nginx
+```
+
+Note:
+
+The full syntax is:
+
+```yaml
+someid:
+  pkg.installed:
+    name: foo
+```
+
+But if `name` is missing, `someid` is used, so you can write:
+
+```yaml
+foo:
+  pkg.installed
+```
+
+## More Tasks
+
+Looking at the given Ansible example:
+
+```yaml
+---
+- hosts: local
+  vars:
+   - docroot: /var/www/serversforhackers.com/public
+  tasks:
+   - name: Add Nginx Repository
+     apt_repository: repo='ppa:nginx/stable' state=present
+     register: ppastable
+
+   - name: Install Nginx
+     apt: pkg=nginx state=installed update_cache=true
+     when: ppastable|success
+     register: nginxinstalled
+     notify:
+      - Start Nginx
+
+   - name: Create Web Root
+     when: nginxinstalled|success
+     file: dest={{ '{{' }} docroot {{ '}}' }} mode=775 state=directory owner=www-data group=www-data
+     notify:
+      - Reload Nginx
+
+  handlers:
+   - name: Start Nginx
+     service: name=nginx state=started
+
+    - name: Reload Nginx
+      service: name=nginx state=reloaded
+```
+
+You can see that Ansible has a way to specify variables. Salt has the concept of [pillar](https://docs.saltstack.com/en/latest/topics/tutorials/pillar.html) which allows you to define data and then make that data visible to hosts using a `top.sls` matching just like with the states. Pillar data is data defined on the "server" (there is a equivalent [grains](https://docs.saltstack.com/en/latest/topics/targeting/grains.html) for data defined in the client).
+
+Edit `srv/pillar/paths.yml`:
+
+```yaml
+docroot: /var/www/serversforhackers.com/public
+```
+
+Edit `srv/pillar/top.sls` and define who will see this pillar (in this case, all hosts):
+
+```yaml
+base:
+  '*':
+    - paths
+```
+
+Then you can see which data every host sees:
+
+```console
+salt-ssh '*' pillar.items
+node1:
+    ----------
+    docroot:
+        /var/www/serversforhackers.com/public
+node2:
+    ----------
+    docroot:
+        /var/www/serversforhackers.com/public
+```
+
+With this you can make sensitive information visible on the hosts that need it. Now that the data is available, you can use it in your sls files, you can add to
+
+```yaml
+nginx package:
+  pkg.installed
+
+nginx service:
+  service.running:
+    - watch: pkg: 'nginx package'
+
+nginx directory:
+  file.directory:
+    - name: {{ pillar['docroot'] }}
+
+```
+
+Which can be abbreviated as:
+
+```yaml
+nginx:
+  pkg.installed: []
+  service.running:
+    - watch: pkg: nginx
+
+{{ pillar['docroot'] }}:
+  file.directory
+```
+
+## Roles
+
+>Roles are good for organizing multiple, related Tasks and encapsulating data needed to accomplish those Tasks. For example, installing Nginx may involve adding a package repository, installing the package and setting up configuration. We've seen installation in action in a Playbook, but once we start configuring our installations, the Playbooks tend to get a little more busy.
 
 
+There is no 1:1 concept in Salt as it already organizes the data around a different set of ideas (eg: gains, pillars), but for the utility of the specific Ansible tutorial, lets look at a few examples.
+
+### Files
+
+Every thing you add to the `file_roots` path (defined in `etc/salt/master`) can be accessed using the [Salt file server](https://docs.saltstack.com/en/develop/ref/file_server/). Lets say we need a template configuration file, you can put it in 'srv/salt/nginx/myconfig` (you can use jinja2 templating on it), and then refer to it from the state:
 
 
+```yaml
+/etc/nginx/myconfig:
+  file.managed:
+    - source: salt//nginx/myconfig
+```
+
+### Template
+
+You can use [Jinja2](https://docs.saltstack.com/en/getstarted/config/jinja.html) templating in states and files, and you can refer to grain and pillar data from them. Salt already include a long list of built-in grains you can use (see `grain.items`) and you can also create your own grain modules to gather other data.
+
+A common use of pillar data is to distribute passwords to the configuration files. While you can define pillar data in the `srv` tree, because you can also define [external pillars](https://docs.saltstack.com/en/latest/topics/development/external_pillars.html) you can source your data from anywhere.
+
+### Running the role
+
+As mentioned before, you can apply the state by either making it part of the host highstate or apply it explicitly.
+
+>Let's create a "master" yaml file which defines the Roles to use and what hosts to run them on:
+>File server.yml:
+
+```yaml
+---
+- hosts: all
+  roles:
+    - nginx
+```
+
+This is equivalent to the `top.sls` file in `srv/salt` (with a less powerful matching system).
+
+```yaml
+base:
+  `*`:
+    - nginx
+```
+
+>Then we can run the Role(s):
 
 
+```console
+salt-ssh '*' state.apply
+```
 
+Would apply what `top.sls` defines.
 
+## Facts
 
+These are equivalent to grains, and you can see what grains you have available by calling:
+
+```
+salt-ssh '*' grain.items
+```
+
+You can use them from Jinja2 as `grains`:
+
+```yaml
+{% if grains['os_family'] == 'RedHat' %}
+...
+{% endif %}
+```
+If you need a custom grain definition, you can [write your own](https://docs.saltstack.com/en/latest/topics/targeting/grains.html#writing-grains) and distribute them from the server.
+
+## Vault
+
+The equivalent in Salt would be to use the Pillar. If you need encryption support you have various options:
+
+* Use a external pillar which fetches the data from a vault service
+* Use the [renderer system](https://docs.saltstack.com/en/latest/ref/renderers/) and add the [gpg renderer](https://docs.saltstack.com/en/latest/ref/renderers/all/salt.renderers.gpg.html) to the chain. (Disclaimer: I haven't tried this myself).
+
+## Example: Users
+
+You will need a pillar:
+
+```yaml
+admin_password: $6$lpQ1DqjZQ25gq9YW$mHZAmGhFpPVVv0JCYUFaDovu8u5EqvQi.Ih
+deploy_password: $6$edOqVumZrYW9$d5zj1Ok/G80DrnckixhkQDpXl0fACDfNx2EHnC
+common_public_key: ssh-rsa ALongSSHPublicKeyHere
+```
+
+And then refer to it from the [user state](https://docs.saltstack.com/en/latest/ref/states/all/salt.states.user.html):
+
+```yaml
+admin:
+  user.present:
+    - password: {{ pillar['admin_password'] }}
+    - shell: /bin/bash
+
+sshkeys:
+  ssh_auth.present:
+    - user: admin
+    - name: {{ pillar['common_public_key'] }}
+```
+
+## Recap
+
+So, this is how you use Salt in a way similar to Ansible. The best part of this is that you can start learning about Salt without having to deploy a Salt master/minion infrastructure.
+
+The master/minion infrastructure brings a whole new set of possibilities. The reason we chose Salt is because here is where it starts, and not where it ends.
+
+Thanks to [Chris Fidao](https://serversforhackers.com) for the original Ansible tutorial.
 
 
