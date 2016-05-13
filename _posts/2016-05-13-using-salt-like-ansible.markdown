@@ -264,6 +264,7 @@ foo:
 Looking at the given Ansible example:
 
 ```yaml
+{% raw %}
 ---
 - hosts: local
   vars:
@@ -282,7 +283,7 @@ Looking at the given Ansible example:
 
    - name: Create Web Root
      when: nginxinstalled|success
-     file: dest={{ '{{' }} docroot {{ '}}' }} mode=775 state=directory owner=www-data group=www-data
+     file: dest={{ docroot }} mode=775 state=directory owner=www-data group=www-data
      notify:
       - Reload Nginx
 
@@ -292,6 +293,8 @@ Looking at the given Ansible example:
 
     - name: Reload Nginx
       service: name=nginx state=reloaded
+{% endraw %}
+
 ```
 
 You can see that Ansible has a way to specify variables. Salt has the concept of [pillar](https://docs.saltstack.com/en/latest/topics/tutorials/pillar.html) which allows you to define data and then make that data visible to hosts using a `top.sls` matching just like with the states. Pillar data is data defined on the "server" (there is a equivalent [grains](https://docs.saltstack.com/en/latest/topics/targeting/grains.html) for data defined in the client).
@@ -299,7 +302,9 @@ You can see that Ansible has a way to specify variables. Salt has the concept of
 Edit `srv/pillar/paths.yml`:
 
 ```yaml
+{% raw %}
 docroot: /var/www/serversforhackers.com/public
+{% endraw %}
 ```
 
 Edit `srv/pillar/top.sls` and define who will see this pillar (in this case, all hosts):
@@ -327,6 +332,7 @@ node2:
 With this you can make sensitive information visible on the hosts that need it. Now that the data is available, you can use it in your sls files, you can add to
 
 ```yaml
+{% raw %}
 nginx package:
   pkg.installed
 
@@ -338,11 +344,13 @@ nginx directory:
   file.directory:
     - name: {{ pillar['docroot'] }}
 
+{% endraw %}
 ```
 
 Which can be abbreviated as:
 
 ```yaml
+{% raw %}
 nginx:
   pkg.installed: []
   service.running:
@@ -350,6 +358,8 @@ nginx:
 
 {{ pillar['docroot'] }}:
   file.directory
+{% endraw %}
+
 ```
 
 ## Roles
@@ -418,9 +428,11 @@ salt-ssh '*' grain.items
 You can use them from Jinja2 as `grains`:
 
 ```yaml
+{% raw %}
 {% if grains['os_family'] == 'RedHat' %}
 ...
 {% endif %}
+{% endraw %}
 ```
 If you need a custom grain definition, you can [write your own](https://docs.saltstack.com/en/latest/topics/targeting/grains.html#writing-grains) and distribute them from the server.
 
@@ -444,6 +456,7 @@ common_public_key: ssh-rsa ALongSSHPublicKeyHere
 And then refer to it from the [user state](https://docs.saltstack.com/en/latest/ref/states/all/salt.states.user.html):
 
 ```yaml
+{% raw %}
 admin:
   user.present:
     - password: {{ pillar['admin_password'] }}
@@ -453,6 +466,7 @@ sshkeys:
   ssh_auth.present:
     - user: admin
     - name: {{ pillar['common_public_key'] }}
+{% endraw %}
 ```
 
 ## Recap
