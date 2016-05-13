@@ -26,9 +26,12 @@ Or manage dumb devices with the concept of Salt proxies:
 
 ![Salt 0mq]({{ site.baseurl }}/assets/images/posts/2016-05-13-using-salt-like-ansible/salt-proxy.png)
 
-Now, for a small DevOp team collaborating via git, the model of running Ansible from their workstations to a bunch of nodes defined in a text file is very attractive.
+The power of all the concepts Salt introduces is huge, and it is definitely [worth to learn them](https://docs.saltstack.com/en/getstarted/).
+
+However, for a small DevOp team collaborating via git, the model of running Ansible from their workstations to a bunch of nodes defined in a text file is very attractive.
 
 Salt allows you to do this too. It is called `salt-ssh`. So lets take [this Ansible tutorial](https://serversforhackers.com/an-ansible-tutorial) and show how you would do the same with `salt-ssh`.
+
 
 
 
