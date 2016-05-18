@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Salt like Ansible
-date: '2016-05-13'
+date: '2016-05-18'
 categories:
 - Software
 tags:
