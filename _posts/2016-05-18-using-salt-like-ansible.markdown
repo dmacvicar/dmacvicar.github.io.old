@@ -90,7 +90,7 @@ mkdir -p srv/salt
 mkdir -p srv/pillar
 ```
 
-Salt will also create a `var` directory for the cache inside the project tree, unless you choose a different path. What I do is to put `var` inside `.gitignore`.
+Salt will also create a `var` directory for the cache inside the project tree, unless you chose a different path. What I do is to put `var` inside `.gitignore`.
 
 ## Managing servers
 
