@@ -100,7 +100,7 @@ When meeting enterprise customers who are starting to use configuration manageme
 
 That was the point that I started to think on how we could use the state system do a more generic auditing, but how to do it without ruining the experience of working with states until it all clicked together: implicit state can be done explicit by using another state. When the customer said "any change", it was in reality saying "any change against my defined configuration" plus "any change since my last working configuration".
 
-So, we needed a way to manage "last working configuration" and turns out SUSE is where [Snapper](http://snapper.io] originated and Snapper is nowadays available in most distributions.
+So, we needed a way to manage "last working configuration" and turns out SUSE is where [Snapper](http://snapper.io) originated and Snapper is nowadays available in most distributions.
 
 Snapper is a set of tools over snapshots (mostly btrfs, but also works on others like ext4 if you have the required kernel/tool patches). Think of it of what docker did to containers, snapper does to snapshots. It adds the required workflows, terminology and tools to make them usable.
 
