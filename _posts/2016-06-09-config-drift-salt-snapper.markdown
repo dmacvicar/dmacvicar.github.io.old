@@ -150,6 +150,8 @@ minion2:
         +some text
 ```
 
+Additionally, you get `snapper.undo_jid` which you can guess what it does: it undoes the changes done by a specific salt job (which of course could be a ```state.apply``` run).
+
 * And finally, allowing a system administrator to use snapshots as a baseline to apply state. Lets take the original example with the malicious user modifying `/etc/hosts', we will add a snapper state rule:
 
 ```yaml
