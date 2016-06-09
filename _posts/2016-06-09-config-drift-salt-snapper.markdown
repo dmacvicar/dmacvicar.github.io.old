@@ -232,30 +232,3 @@ You can find our current work [in this github repository](https://github.com/SUS
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-![Salt syndic]({{ site.baseurl }}/assets/images/posts/2016-05-13-using-salt-like-ansible/salt-syndic.png)
-
-
-
