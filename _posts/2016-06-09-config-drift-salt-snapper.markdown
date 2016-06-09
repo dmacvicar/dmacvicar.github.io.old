@@ -134,7 +134,7 @@ pre    | 21 |       | Thu Jun  9 10:34:36 2016 | root | number  | salt job 20160
 post   | 22 | 21    | Thu Jun  9 10:34:37 2016 | root | number  | salt job 20160609103437556668 | salt_jid=20160609103437556668
 ```
 
-Because in Salt, state is implemented as a method `state.apply` or state.highstate`, calling `snapper.run function=state.apply` means you can rollback a failed `state.apply`.
+Because in Salt, state is implemented as a method `state.apply` or `state.highstate`, calling `snapper.run function=state.apply` means you can rollback a failed `state.apply`.
 
 And of course we not only exposed `snapper.diff` which takes the snapshot number but also a `snapper.diff_jid` which tells you what a Salt job changed:
 
