@@ -7,12 +7,11 @@ categories:
 tags:
 - salt
 comments: true
-hide: true
 ---
 
 ## Introduction
 
-That some configuration management tools originate in the DevOps space and their inmense popularity there has as a result that even when they declaratively manage configuration, they are tailored towards deployment of new servers using this configuration but not torwards the auditing of existing servers.
+Many configuration management tools originate in the DevOps space and become immensely popular and while they do manage configuration, they are tailored towards deployment of new servers using this configuration and not towards auditing of existing servers.
 
 For example, lets imagine a server with the following state:
 
@@ -88,19 +87,19 @@ Failed:    0
 Total states run:     1
 ```
 
-It did not found anything. This is expected. This rule is not in the configuration.
+As expected, it did not find anything, because this rule is not in the configuration.
 
 ## Creating new systems vs auditing existing systems
 
-This model works fine in the DevOps world where the culture is to take a random Linux image from the internet and use it as a base to deploy systems from scratch. As long as all tests pass, replacing the underlaying image is not a problem. Only what is explicitly defined is evaluated against the configuration and defined as a drift.
+This model works fine in the DevOps world where the culture is to take a random Linux image from the internet and use it as a base to deploy systems from scratch. As long as all tests pass, replacing the underlying image is not a problem. Only what is explicitly defined is evaluated against the configuration and defined as a drift.
 
 When meeting enterprise customers who are starting to use configuration management to improve the control on their infrastructure, it turns out their expectations where different. "If I use Salt, will it tell me when somebody makes a change to the system?". "Ugh.. no... well depends...".
 
 ## Baselines
 
-That was the point that I started to think on how we could use the state system do a more generic auditing, but how to do it without ruining the experience of working with states until it all clicked together: implicit state can be done explicit by using another state. When the customer said "any change", it was in reality saying "any change against my defined configuration" plus "any change since my last working configuration".
+That was the point that I started to think about - how could we use the state system to do more generic auditing and how do you do it without ruining the experience of working with states?  Then it all clicked – implicit state can be done explicitly by using another state.  When the customer said “any change”, they were in reality saying "any change against my defined configuration" plus "any change since my last working configuration".
 
-So, we needed a way to manage "last working configuration" and turns out SUSE is where [Snapper](http://snapper.io) originated and Snapper is nowadays available in most distributions.
+So, we needed a way to manage "last working configuration" and turns out SUSE is where [Snapper](http://snapper.io) originated and Snapper is nowadays available with most Linux distributions.
 
 Snapper is a set of tools over snapshots (mostly btrfs, but also works on others like ext4 if you have the required kernel/tool patches). Think of it of what docker did to containers, snapper does to snapshots. It adds the required workflows, terminology and tools to make them usable.
 
