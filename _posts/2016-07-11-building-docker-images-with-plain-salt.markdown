@@ -11,7 +11,7 @@ comments: true
 hide: true
 ---
 
-So [Hackweek 14](https://hackweek.suse.com/) is over. It started during the [openSUSE Conference 2016](https://events.opensuse.org/conference/oSC16) on Friday June 24 and continued over all the following week.
+So [Hackweek 14](https://hackweek.suse.com/) is over. It started during the [openSUSE Conference 2016](https://events.opensuse.org/conference/oSC16) on Friday June 24 and continued all over the following week.
 
 I had worked on [integrating snapshots with Salt]({% post_url 2016-06-09-config-drift-salt-snapper %}) with [Pablo](https://github.com/meaksh) just some weeks before that and I was waiting for the openSUSE Conference to get the chance to show [Thomas](https://twitter.com/thatch45) what we had done in order to get feedback and figure out next steps.
 
