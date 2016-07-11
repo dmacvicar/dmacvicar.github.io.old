@@ -8,7 +8,7 @@ tags:
 - salt
 - docker
 comments: true
-hidden: true
+hide: true
 ---
 
 So [Hackweek 14](https://hackweek.suse.com/) is over. It started during the [openSUSE Conference 2016](https://events.opensuse.org/conference/oSC16) on Friday June 24 and continued over all the following week.
