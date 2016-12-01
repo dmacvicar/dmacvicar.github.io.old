@@ -8,7 +8,6 @@ tags:
 - salt
 - docker
 comments: true
-hide: true
 ---
 
 So [Hackweek 14](https://hackweek.suse.com/) is over. It started during the [openSUSE Conference 2016](https://events.opensuse.org/conference/oSC16) on Friday June 24 and continued all over the following week.
@@ -21,7 +20,7 @@ On one hand, it was not what I was expecting (well, at least, for a Press Releas
 
 On the other hand, it was pure inspiration: I remembered why I like Salt so much. I knew that with Salt [I wouldn't need to build a "new tool"]({% post_url 2016-05-18-using-salt-like-ansible %}). I'd only need to write a module and connect some pieces, and that makes my feature distributed, accessible, deployable, etc. I'd not need to interact with Docker directly, but only with the [Salt execution module](https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.dockerng.html) for it. The best part: I had a Hackweek project!.
 
-I used the chance that Thomas was at the openSUSE Conference to ask him some details about `salt-thin` and explain him rough ideas.
+I used the chance that [Thomas](https://twitter.com/thatch45) was at the openSUSE Conference to ask him some details about `salt-thin` and explain him rough ideas.
 
 The feature went more or less like expected:
 
