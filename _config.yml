@@ -9,7 +9,12 @@ permalink: /:year/:month/:day/:title.html
 url: https://duncan.mac-vicar.com
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
-collections:
-  tutorials:
-    output: true
-    permalink: /tutorial/:title/index:output_ext
+authors:
+  dmacvicar:
+    display_name: Duncan Mac-Vicar P.
+    gravatar: 34818/ca478028be5b9b69a6549f1619529725
+    email: dmacvicar@gmail.com
+    web: http://duncan.codes
+    twitter: dmacvicar
+    github: dmacvicar
+
