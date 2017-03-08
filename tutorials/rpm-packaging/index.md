@@ -404,7 +404,7 @@ touch %{buildroot}%{_datadir}/%{name}/CONTENT
 
 This spec file just creates a directory `/usr/share/mypackage` and puts a dummy `CONTENT` file in it.
 
-spec files are heavily defined by macros that make sure that paths and values are specified by the distribution. Those paths. Those macros are shipped by the base distribution and are located in `/usr/lib/rpm` and `/etc/rpm`. Other packages may contribute more macros. For example the macros defined in `/usr/lib/rpm/golang-macros.rb` are provided by the `golang-packaging` package and are useful to create packages that use the Go language.
+spec files are heavily defined by macros that make sure that paths and values are specified by the distribution. Those macros are shipped by the base distribution and are located in `/usr/lib/rpm` and `/etc/rpm`. Other packages may contribute more macros. For example the macros defined in `/usr/lib/rpm/golang-macros.rb` are provided by the `golang-packaging` package and are useful to create packages that use the Go language.
 
 ## Sub-packages
 
