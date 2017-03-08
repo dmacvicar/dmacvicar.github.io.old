@@ -406,6 +406,15 @@ This spec file just creates a directory `/usr/share/mypackage` and puts a dummy 
 
 spec files are heavily defined by macros that make sure that paths and values are specified by the distribution. Those macros are shipped by the base distribution and are located in `/usr/lib/rpm` and `/etc/rpm`. Other packages may contribute more macros. For example the macros defined in `/usr/lib/rpm/golang-macros.rb` are provided by the `golang-packaging` package and are useful to create packages that use the Go language.
 
+## Common macros
+
+When building spec files, you should be familiar with macros like `%{_prefix}`, `%{_datadir}`, `%{_mandir}`, `%{_libdir}`, `%{_bindir}`, etc. You can evaluate a macro like this:
+
+```console
+$ rpm --eval "%{_libdir}"
+/usr/lib64
+```
+
 ## Sub-packages
 
 Sometimes from a single source you will build multiple components that are independent of each other.
@@ -424,14 +433,6 @@ For this, you can declare [subpackages](http://ftp.rpm.org/max-rpm/ch-rpm-subpac
 * `liboffice`
 * `office-devel`
 
-## Common macros
-
-When building spec files, you should be familiar with macros like `%{_prefix}`, `%{_datadir}`, `%{_mandir}`, `%{_libdir}`, `%{_bindir}`, etc. You can evaluate a macro like this:
-
-```console
-$ rpm --eval "%{_libdir}"
-/usr/lib64
-```
 
 ## Building with rpmbuild
 
