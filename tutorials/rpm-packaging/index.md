@@ -601,7 +601,7 @@ The most interesting feature is the ability to build locally. "We already did th
 
 ```console
 $ cd home:dmacvicar/gqlplus
-$ osc build sc build openSUSE_Leap_42.2
+$ osc build openSUSE_Leap_42.2
 ...
 
 ```
@@ -619,7 +619,7 @@ $ spec-cleaner -i gqlplus.spec
 ```
 
 For example, it can help you converting `BuildRequires: foo-devel` dependencies to `BuildRequires: pkgconfig(foo)`. If a -devel package installs a pkg-config module, a `Provides: pkgconfig(foo)` is automatically injected.
-If the build process (`./configure` or `Makefile`) uses pkg-config to find the software, it makes more sense and it is closer to reality to depend on `pkgconfig(foo)` being presetn, regardless of which `-devel` package provides it.
+If the build process (`./configure` or `Makefile`) uses pkg-config to find the software, it makes more sense and it is closer to reality to depend on `pkgconfig(foo)` being present, regardless of which `-devel` package provides it.
 
 For post-build checks, you can get more information about how to fix them in the [openSUSE Packaging Checks](https://en.opensuse.org/openSUSE:Packaging_checks) page.
 
