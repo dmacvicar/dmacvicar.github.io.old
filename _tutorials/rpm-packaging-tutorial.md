@@ -125,7 +125,7 @@ sed
 systemd
 ```
 
-For example, a package may need a library, or an executable that is
+For example, a package may need a library, or an executable that is called during runtime.
 
 * What does the package provides for other packages to to work (`Provides`)
 
@@ -333,7 +333,7 @@ $ zypper install -t pattern laptop
 
 But where do patterns come from? They don't exists on their own. The package managers creates them dynamically from packages names `patterns-XXXXXX` which have a special set of dependencies. So installing a pattern would actually install the package representing that pattern. The other way around is true, if you install the package representing the pattern, it will make the system look like the pattern is installed.
 
-`rpm -q --provides patterns-openSUSE-laptop` would show you some of the magic behind patterns`.
+`$ zypper info --provides patterns-openSUSE-laptop` would show you some of the magic behind patterns (equivalent to`rpm -q --provides patterns-openSUSE-laptop`).
 
 ### Products
 
