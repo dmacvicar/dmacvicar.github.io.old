@@ -1,13 +1,13 @@
 ---
 layout: post
 title: RPM Packaging Tutorial
-date: '2016-07-11'
+date: '2017-03-08'
 categories:
 - Software
 tags:
 - rpm
-- 
-comments: true
+- linux
+comments: false
 ---
 
 # What is a package
