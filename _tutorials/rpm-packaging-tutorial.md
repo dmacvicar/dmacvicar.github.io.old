@@ -145,7 +145,7 @@ Additionally, the metadata of the package and the fact that is installed is reco
 Packages can be installed with the `rpm` tools:
 
 ```console
-$ rpm -i rsync-3.1.2-1.5.x86_64.rpm
+$ rpm -U rsync-3.1.2-1.5.x86_64.rpm
 ```
 
 Once you do this, you can perform the same queries without specifying the `-p` option and using what is called the NVRA (name-version-release-architecture, `rsync-3.1.2-1.5.x86_64`) or a subset of it, eg. just name (`rsync`).
