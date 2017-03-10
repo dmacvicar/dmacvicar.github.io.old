@@ -629,4 +629,56 @@ For post-build checks, you can get more information about how to fix them in the
 
 Until now we have left the `%changelog` section empty. Some distributions write there the history for the package. SUSE-flavored distributions keep the changelog in a separate `.changes` file. To quickly generate or update it, you can use `osc vc` in the directory containing the spec file and the sources.
 
+The editor used by `osc vc` is determined by the `EDITOR` environment
+variable just like for most `git` commands.
 
+## Finding the devel package on OBS
+
+When contributing to an already-existing package on OBS, it is usually
+best to submit any change requests to the project where that package
+is developed. It is easy to find the devel project using the
+`develproject` (`dp`) command:
+
+``` console
+$ osc dp openSUSE:Factory rsync
+network
+```
+
+Create a branch and a local checkout of the package using the `branch`
+command:
+
+``` console
+$ osc bco network rsync
+A    home:dmacvicar:branches:network
+A    home:dmacvicar:branches:network/rsync
+...
+At revision 11d4f594469a6679d30ae05f8b2187fd.
+Note: You can use "osc delete" or "osc submitpac" when done.
+```
+
+Now, you can make local changes to the package, for example adding a
+patch to be applied to the sources after unpacking the source
+tarball. You can then build the package locally as described earlier
+using `osc build`.
+
+Once you are happy with the package, you can commit it to your
+personal project on OBS using `osc commit`. The build service will
+then build the package remotely, so this step may reveal more issues
+(for example if building on the ARM platform as well) that need to be
+fixed before submitting the change to the devel project.
+
+Once everything builds successfully on the build service as well as
+locally, you can create a *submit request* to get the new version
+merged into the devel project. To do this, use the `submitrequest`
+(`sr`) command:
+
+```console
+$ osc sr
+```
+
+When the package is a branch from an existing project created using
+the `branch` command, the build service remembers where the package
+was branched from and automatically creates the submit request to that
+location. If you want to override this, simply pass the project name
+as an argument to `sr`: `osc sr openSUSE:Factory`. This should rarely
+be needed, however.
