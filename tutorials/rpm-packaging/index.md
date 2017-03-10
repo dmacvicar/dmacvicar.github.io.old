@@ -224,7 +224,7 @@ Not everything is as strict. Sometimes a package works better if another package
 
 For daily system administration and maintenance, the `rpm` tool is not sufficient. You will quickly fall into what is called the "dependency hell". Downloading packages by hand in order to satisfy a dependency to quickly realize this new package also requires something else.
 
-This problem is solved by a tool that implementes a solver. The solver takes:
+This problem is solved by a tool that implements a solver. The solver takes:
 
 * The list of installed packages (and therefore all its dependencies)
 * The list of available packages
@@ -239,7 +239,7 @@ The rest of the package manager includes:
 * Handling of package repositories
 * Checking the integrity of packages
 * Fetching remote packages
-* Reading and honouring user/system policies
+* Reading and honoring user/system policies
 
 This functionality in SUSE systems is implemented by the [ZYpp](https://en.opensuse.org/Portal:Libzypp) library, which also includes a command-line tool called `zypper`. While tools like [YaST](https://yast.github.io/) also interact with ZYpp, on the console you will likely interact with `zypper`.
 
@@ -611,7 +611,7 @@ A    home:dmacvicar/gqlplus/gqlplus.changes
 A    home:dmacvicar/gqlplus/gqlplus.spec
 At revision 4.
 ```
-The most interesting feature is the ability to build locally. "We already did that!" you may think (`rpmbuild`). However, `osc` allows you to build in an issolated environment (either a [chroot jail](https://en.wikipedia.org/wiki/Chroot) or a virtual machine), setting up that environment automatically using the `BuildRequires` of the spec file, and also allowing you to build against a different distribution than the one you are running.
+The most interesting feature is the ability to build locally. "We already did that!" you may think (`rpmbuild`). However, `osc` allows you to build in an isolated environment (either a [chroot jail](https://en.wikipedia.org/wiki/Chroot) or a virtual machine), setting up that environment automatically using the `BuildRequires` of the spec file, and also allowing you to build against a different distribution than the one you are running.
 
 
 ```console
