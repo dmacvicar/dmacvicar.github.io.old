@@ -24,7 +24,7 @@ A package is a way of distributing software on Linux systems. A single applicati
 
 On some platforms, applications are self-contained into a directory. This makes installing an app just adding a folder, and uninstalling the app, removing it.
 
-Linux systems tend to share as much as components as possible. This is due partly to some advantages of this philosophy, but it is due mostly because in the Linux eco-system, the whole universe is built by the same entity, except for a few 3rd party applications. This makes easy to assume that a library is available for all applications to consume.
+Linux systems tend to share as much as components as possible. This is due partly to some advantages of this philosophy, but it is due mostly because in the Linux ecosystem, the whole universe is built by the same entity, except for a few 3rd party applications. This makes easy to assume that a library is available for all applications to consume.
 In an MacOS system, only the core comes from a single vendor, and all applications come from 3rd parties. It is therefore harder to make assumptions, and they tend to ship their own version of any depending component, with the exception of everything documented as the "platform".
 
 For example, if an application requires the SSL library and the Qt toolkit. On a Linux system, it will likely use both components from the Linux distribution, while the MacOS version will likely use the SSL library from the OS, but ship its own version of Qt, as it is not a standard MacOS library.
@@ -156,7 +156,7 @@ Packages can be installed with the `rpm` tools:
 $ rpm -U rsync-3.1.2-1.5.x86_64.rpm
 ```
 
-Once you do this, you can perform the same queries without specifying the `-p` option and using what is called the NVRA (name-version-release-architecture, `rsync-3.1.2-1.5.x86_64`) or a subset of it, eg. just name (`rsync`).
+Once you do this, you can perform the same queries without specifying the `-p` option and using what is called the NVRA (name-version-release-architecture, `rsync-3.1.2-1.5.x86_64`) or a subset of it, e.g. just name (`rsync`).
 
 ```console
 $ rpm -q --provides rsync
@@ -181,7 +181,7 @@ You saw that rsync requires `/bin/sh`. While this looks like a file name, here i
 The distribution build system will scan all executables a package installs in a system and inject automatically those `Provides`, so that the packager does not need to take care of them.
 
 We will see later that the same is done with libraries. Instead of `rsync` depending on the `glibc` package. When `glibc` was built, the build system scanned the content, found `/lib64/libc.so.6` and injected a `Provides: libc.so.6()(64bit)` into the `glibc` metadata. In the case of shared libraries it is not that important where they are located, as the linker configuration takes care of that.
-When the `rsync` package whas built (`glibc` had to be installed at that point to build it), the build system scanned the executable `/usr/lib/rsync` and realized it was linked against `libc.so.6`:
+When the `rsync` package was built (`glibc` had to be installed at that point to build it), the build system scanned the executable `/usr/lib/rsync` and realized it was linked against `libc.so.6`:
 
 ```console
 $ ldd /usr/bin/rsync
@@ -224,7 +224,7 @@ Not everything is as strict. Sometimes a package works better if another package
 
 For daily system administration and maintenance, the `rpm` tool is not sufficient. You will quickly fall into what is called the "dependency hell". Downloading packages by hand in order to satisfy a dependency to quickly realize this new package also requires something else.
 
-This problem is solved by a tool that implementes a solver. The solver takes:
+This problem is solved by a tool that implements a solver. The solver takes:
 
 * The list of installed packages (and therefore all its dependencies)
 * The list of available packages
@@ -253,7 +253,7 @@ Now, when we say "retrieve other packages", the question arises. From where?
 
 ## Repositories
 
-You can see that `zypper` can install a package directly from an rpm file. Now, if there is the need for installing dependencies or retrieving packages ie. when you upgrade a system, you will need a "library" of packages. This is what is called a repository. A repository is:
+You can see that `zypper` can install a package directly from an rpm file. Now, if there is the need for installing dependencies or retrieving packages i.e. when you upgrade a system, you will need a "library" of packages. This is what is called a repository. A repository is:
 
 * A collection of packages
 * A set of metadata files
@@ -277,10 +277,10 @@ A system normally will have the following repositories:
 * Additional modules, addons products or extensions.
 * An update repository for each base product or extension
 
-Running list repositories with `-u` ie. `zypper lr -u` will show you the URI of the repository. eg. `http://download.opensuse.org/update/leap/42.2/oss/`. If you visit this URI, you will see:
+Running list repositories with `-u` i.e. `zypper lr -u` will show you the URI of the repository. e.g. `http://download.opensuse.org/update/leap/42.2/oss/`. If you visit this URI, you will see:
 
-* a `x86_64` directory containing all architecture-dependent packages (ie. ones that contain executables, shared libraries, etc)
-* a `noarch` directory containing architecture-independent packages (ie. ones containing data or scripts)
+* a `x86_64` directory containing all architecture-dependent packages (i.e. ones that contain executables, shared libraries, etc)
+* a `noarch` directory containing architecture-independent packages (i.e. ones containing data or scripts)
 * a `repodata` directory, containing the metadata for all packages.
 
 The metadata for this type of repositories consists in a `repodata/repomd.xml` file index, that is signed (`repomd.xml.asc`) using a key already present in the original system. `repodata/repomd.xml` refers to other metadata file with their checksums. The most important is `primary.xml` which contains all package dependencies.
@@ -305,7 +305,7 @@ During refresh, metadata is cached locally at `/var/cache/zypp/raw` and converte
 
 ### Services
 
-Services are a higher-level version of repositories. It is another index that lists repositores. When the system is subscribed from to a service, refreshing the service will result in a new list of repositories, and the package manager will add new ones or remove obsolete ones.
+Services are a higher-level version of repositories. It is another index that lists repositories. When the system is subscribed from to a service, refreshing the service will result in a new list of repositories, and the package manager will add new ones or remove obsolete ones.
 
 Services are used for example on SUSE Linux Enterprise with the SUSE Customer Center. A customer is subscribed to a service provided by SCC using a credential. The customer, based on his entitlements, can "activate" a new product. SUSE Customer Center knows about those activations, and on service refresh, it will provide a new list of repositories that includes the new activated product.
 
@@ -341,7 +341,7 @@ $ zypper install -t pattern laptop
 
 But where do patterns come from? They don't exists on their own. The package managers creates them dynamically from packages names `patterns-XXXXXX` which have a special set of dependencies. So installing a pattern would actually install the package representing that pattern. The other way around is true, if you install the package representing the pattern, it will make the system look like the pattern is installed.
 
-`$ zypper info --provides patterns-openSUSE-laptop` would show you some of the magic behind patterns (equivalent to`rpm -q --provides patterns-openSUSE-laptop`).
+`$ zypper info --provides patterns-openSUSE-laptop` would show you some of the magic behind patterns (equivalent to `rpm -q --provides patterns-openSUSE-laptop`).
 
 ### Products
 
@@ -367,7 +367,7 @@ During solving, there is one entity providing dependencies that is used to match
 Provides :modalias(pci:v0000104Cd0000840[01]sv*sd*bc*sc*i*)
 ```
 
-Then, a package providing a WLAN driver for some cards (eg. `wlan-kmp-default`), could have the following dependencies:
+Then, a package providing a WLAN driver for some cards (e.g. `wlan-kmp-default`), could have the following dependencies:
 
 ```
 Supplements: modalias(kernel-default:pci:v0000104Cd0000840[01]sv*sd*bc*sc*i*)
@@ -379,7 +379,7 @@ Which results in that at solving time, if the hardware is present, the driver wi
 
 <aside>
 <p><i class="fa fa-sticky-note-o"></i><small>
-This is one of the core features of the <a href="https://drivers.suse.com/doc/SolidDriver/Kernel_Module_Packages.html#automatic-installation-via-modaliases">Kernel Module Packages section of the SUSE SolidDriver Program</a>. For more information about KMP's, check this <a href="https://www.suse.com/communities/blog/using-sles-and-the-sle-sdk-build-kernel-module-package-kmp/">Using SLES and the SLE SDK to Build a Kernel Module Package (KMP)</a> post. For more information about the SUSE SolidDriver Program, check this <a href="https://www.suse.com/communities/blog/suse-soliddriver-program/">blog post</a>.
+This is one of the core features of the <a href="https://drivers.suse.com/doc/SolidDriver/Kernel_Module_Packages.html#automatic-installation-via-modaliases">Kernel Module Packages section of the SUSE SolidDriver Program</a>. For more information about KMPs, check this <a href="https://www.suse.com/communities/blog/using-sles-and-the-sle-sdk-build-kernel-module-package-kmp/">Using SLES and the SLE SDK to Build a Kernel Module Package (KMP)</a> post. For more information about the SUSE SolidDriver Program, check this <a href="https://www.suse.com/communities/blog/suse-soliddriver-program/">blog post</a>.
 </small></p>
 </aside>
 
@@ -502,7 +502,7 @@ However, where rpm really shines is that you can build the application in the sp
 
 A common use case to illustrate this is the typical Linux application built with `configure && make && make install`. Lets try to build a package for [gqlplus](http://gqlplus.sourceforge.net), an alternative client for Oracle databases.
 
-Provided that you have readline and ncurses development headers, you can build this application just unpacking the tarball and performing the commands mentioned above. Some programs require an extra step with `autoconf` in order to generate the `configure` script. This is specific to buildin software and has nothing to do with packaging. Certainly builting a Qt based program will be a different experience, and if you build a Java application, you will have to deal with other tools.
+Provided that you have readline and ncurses development headers, you can build this application just unpacking the tarball and performing the commands mentioned above. Some programs require an extra step with `autoconf` in order to generate the `configure` script. This is specific to building software and has nothing to do with packaging. Certainly building a Qt based program will be a different experience, and if you build a Java application, you will have to deal with other tools.
 
 When you do `./configure` you would need to pass the right `--prefix`. This is where macros help you. You could do `configure --prefix=%{_prefix}`, however, there is a better macro called `%configure` which takes care and sets most of the configure options (try expanding it: `echo $(rpm --eval '%configure')`)
 
@@ -611,7 +611,7 @@ A    home:dmacvicar/gqlplus/gqlplus.changes
 A    home:dmacvicar/gqlplus/gqlplus.spec
 At revision 4.
 ```
-The most interesting feature is the ability to build locally. "We already did that!" you may think (`rpmbuild`). However, `osc` allows you to build in an issolated environment (either a [chroot jail](https://en.wikipedia.org/wiki/Chroot) or a virtual machine), setting up that environment automatically using the `BuildRequires` of the spec file, and also allowing you to build against a different distribution than the one you are running.
+The most interesting feature is the ability to build locally. "We already did that!" you may think (`rpmbuild`). However, `osc` allows you to build in an isolated environment (either a [chroot jail](https://en.wikipedia.org/wiki/Chroot) or a virtual machine), setting up that environment automatically using the `BuildRequires` of the spec file, and also allowing you to build against a different distribution than the one you are running.
 
 
 ```console
