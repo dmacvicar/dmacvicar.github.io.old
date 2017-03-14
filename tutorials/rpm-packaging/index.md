@@ -375,7 +375,7 @@ Supplements: modalias(kernel-default:pci:v0000104Cd00009066sv*sd*bc*sc*i*)
 Supplements: modalias(kernel-default:pci:v000010B7d00006000sv*sd*bc*sc*i*)
 ```
 
-Which results in that at solving time, if the hardware is present, the driver will be selected automatically. This is one of the core features of the [Kernel Module Packages section of the SUSE SolidDriver Program](https://drivers.suse.com/doc/SolidDriver/Kernel_Module_Packages.html#automatic-installation-via-modaliases). For more information about KMP's, check this ["Using SLES and the SLE SDK to Build a Kernel Module Package (KMP)](https://www.suse.com/communities/blog/using-sles-and-the-sle-sdk-build-kernel-module-package-kmp/) post. For more information about the SUSE SolidDriver Program, check [this blog post](https://www.suse.com/communities/blog/suse-soliddriver-program/).
+Which results in that at solving time, if the hardware is present, the driver will be selected automatically. This is one of the core features of the [Kernel Module Packages section of the SUSE SolidDriver Program](https://drivers.suse.com/doc/SolidDriver/Kernel_Module_Packages.html#automatic-installation-via-modaliases). For more information about KMP's, check this ["Using SLES and the SLE SDK to Build a Kernel Module Package (KMP)"](https://www.suse.com/communities/blog/using-sles-and-the-sle-sdk-build-kernel-module-package-kmp/) post. For more information about the SUSE SolidDriver Program, check [this blog post](https://www.suse.com/communities/blog/suse-soliddriver-program/).
 
 Something similar is done with translation packages and the current configured system locale.
 
