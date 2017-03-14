@@ -17,25 +17,24 @@ We have something really cool in.
 
 The usecase. I have a webcam, but it does not work, because it requires the quickcam-kmp-default package. But I don't know that.
 
-![The webcam]( [http://www.suse.de/~dmacvicar/driverinstall/webcamphoto1-s.jpg)]({{ site.baseurl }}/assets/webcamphoto1-s.jpg)
-
-![Desktop]( [http://www.suse.de/~dmacvicar/driverinstall/driver-install1-s.png)]({{ site.baseurl }}/assets/driver-install1-s.png)
+![The webcam]({{ site.baseurl }}/assets/images/2008-09-18-extremely-easy-driver-installation/webcamphoto1-s.jpg)
+![Desktop]({{ site.baseurl }}/assets/images/2008-09-18-extremely-easy-driver-installation/driver-install1-s.png)
 
 You are in your desktop. You can see in the tray the applet telling you that there are security updates to install.
 
-![Tray Icon]( [http://www.suse.de/~dmacvicar/driverinstall/driver-install-tray-icon-updates....]({{ site.baseurl }}/assets/driver-install-tray-icon-updates.png)
+![Tray Icon]({{ site.baseurl }}/assets/images/2008-09-18-extremely-easy-driver-installation/driver-install-tray-icon-updates.png)
 
 Now I connect the webcam to the computer:
 
-![Webcam connected]( [http://www.suse.de/~dmacvicar/driverinstall/webcamphoto2-s.jpg)]({{ site.baseurl }}/assets/webcamphoto2-s.jpg)
+![Webcam connected]({{ site.baseurl }}/assets/images/2008-09-18-extremely-easy-driver-installation/webcamphoto2-s.jpg)
 
 Notice the tray icon. It went from "There are security updates available" to a "hardware" icon (we will add a more visible notification too).
 
-![Tray Icon]( [http://www.suse.de/~dmacvicar/driverinstall/driver-install-tray-icon.png)]({{ site.baseurl }}/assets/driver-install-tray-icon.png)
+![Tray Icon]({{ site.baseurl }}/assets/images/2008-09-18-extremely-easy-driver-installation/driver-install-tray-icon.png)
 
 Now you click on the icon and you see:
 
-![Install Dialog]( [http://www.suse.de/~dmacvicar/driverinstall/driver-install4.png)]({{ site.baseurl }}/assets/driver-install4.png)
+![Install Dialog]({{ site.baseurl }}/assets/images/2008-09-18-extremely-easy-driver-installation/driver-install4.png)
 
 You click install, and after 10 seconds quickcam-kmp-default is installed.
 
@@ -61,9 +60,9 @@ So in the last weeks, [Stefan Haas][1] implemented support for this in our Packa
 
 Yesterday I sat to see it working. Some small one liners prevented it to work, but after some tweaking in the PackageKit backend, it worked really well. Thanks for everyone putting the pieces together.
 
-[1]: http://en.opensuse.org/User:Haass  
- [2]: http://en.opensuse.org/User:Tgoettlicher  
- [3]: http://www.suse.de/~dmacvicar/driverinstall/drivers.swf  
- [4]: http://www.packagekit.org  
+[1]: http://en.opensuse.org/User:Haass
+ [2]: http://en.opensuse.org/User:Tgoettlicher
+ [3]: {{ site.baseurl }}/assets/images/2008-09-18-extremely-easy-driver-installation/drivers.swf
+ [4]: http://www.packagekit.org
  [5]: http://en.opensuse.org/ZYPP
 
