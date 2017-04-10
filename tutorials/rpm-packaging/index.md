@@ -164,7 +164,7 @@ $ rpm -q --provides rsync
 
 The `rpm` tool will not help you if the dependencies of the package are not met at installation time. It will just refuse to install the package to avoid having the system in an inconsistent state.
 
-Features like an automatical finding of the required packages and retrieving them are implemented in higher-level tools like `zypper`.
+Features like an automatic finding of the required packages and retrieving them are implemented in higher-level tools like `zypper`.
 
 ## Dependency matching
 
