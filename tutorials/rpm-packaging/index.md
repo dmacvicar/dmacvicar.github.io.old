@@ -135,7 +135,7 @@ systemd
 
 For example, a package may need a library, or an executable that is called during runtime.
 
-* What does the package provides for other packages to to work (`Provides`)
+* What does the package provides for other packages to work (`Provides`)
 
 ```console
 $ rpm -qp --provides rsync-3.1.2-1.5.x86_64.rpm
@@ -156,7 +156,7 @@ Packages can be installed with the `rpm` tools:
 $ rpm -U rsync-3.1.2-1.5.x86_64.rpm
 ```
 
-Once you do this, you can perform the same queries without specifying the `-p` option and using what is called the NVRA (name-version-release-architecture, `rsync-3.1.2-1.5.x86_64`) or a subset of it, eg. just name (`rsync`).
+Once you do this, you can perform the same queries without specifying the `-p` option and use what is called the NVRA (name-version-release-architecture, `rsync-3.1.2-1.5.x86_64`) or a subset of it, e.g. just name (`rsync`).
 
 ```console
 $ rpm -q --provides rsync
@@ -164,7 +164,7 @@ $ rpm -q --provides rsync
 
 The `rpm` tool will not help you if the dependencies of the package are not met at installation time. It will just refuse to install the package to avoid having the system in an inconsistent state.
 
-Features like automatically finding the required packages and retrieving them, are implemented in higher-level tools like `zypper`.
+Features like an automatic finding of the required packages and retrieving them are implemented in higher-level tools like `zypper`.
 
 ## Dependency matching
 
@@ -172,7 +172,7 @@ You saw above that a package has a list of `Requires` and `Provides`. Those aren
 
 The main rule is that each package provides its own name. So the rsync package `Provides: rsync`.
 
-You saw that rsync requires `/bin/sh`. While this looks like a file name, here it is an arbitrary symbol and the meaning is given by the whole distribution. Why it does not require a package named `sh` instead?. Well, this is for various reasons:
+You saw that rsync requires `/bin/sh`. While this looks like a file name, here it is an arbitrary symbol and the meaning is given by the whole distribution. Why it does not require a package named `sh` instead? Well, this is for various reasons:
 
 * It provides a layer of indirection that makes the system cohesive.
 
@@ -180,8 +180,8 @@ You saw that rsync requires `/bin/sh`. While this looks like a file name, here i
 
 The distribution build system will scan all executables a package installs in a system and inject automatically those `Provides`, so that the packager does not need to take care of them.
 
-We will see later that the same is done with libraries. Instead of `rsync` depending on the `glibc` package. When `glibc` was built, the build system scanned the content, found `/lib64/libc.so.6` and injected a `Provides: libc.so.6()(64bit)` into the `glibc` metadata. In the case of shared libraries it is not that important where they are located, as the linker configuration takes care of that.
-When the `rsync` package whas built (`glibc` had to be installed at that point to build it), the build system scanned the executable `/usr/lib/rsync` and realized it was linked against `libc.so.6`:
+We will see later that the same is done with libraries. Instead of `rsync` depending on the `glibc` package, when `glibc` was built, the build system scanned the content, found `/lib64/libc.so.6` and injected a `Provides: libc.so.6()(64bit)` into the `glibc` metadata. In the case of shared libraries it is not that important where they are located, as the linker configuration takes care of that.
+When the `rsync` package was built (`glibc` had to be installed at that point to build it), the build system scanned the executable `/usr/lib/rsync` and realized it was linked against `libc.so.6`:
 
 ```console
 $ ldd /usr/bin/rsync
@@ -200,7 +200,7 @@ $ ldd /usr/bin/rsync
 
 Therefore, it injected `Requires: libc.so.6()(64bit)` to the `rsync` package.
 
-Compare it to other packaging systems. Package `musicplayer` requires `libsound`. `/usr/bin/musicplayer` links to `/usr/lib64/libsound.so.5`. Later, `musicplayer` is rebuilt against a newer `libsound`, which is not published. The user installs `musicplayer` with no issues because it only `Requires: libsound` (as in package name). Then when she tries to run it:
+Compare it to other packaging systems. Package `musicplayer` requires `libsound`. `/usr/bin/musicplayer` links to `/usr/lib64/libsound.so.5`. Later, `musicplayer` is rebuilt against a newer `libsound`, which is not published. The user installs `musicplayer` with no issues because it only `Requires: libsound` (as in package name). Then when he/she tries to run it:
 
 ```console
 $ musicplayer
@@ -217,14 +217,14 @@ There are also other dependencies with more advances purposes: `Conflicts`, `Obs
 
 Not everything is as strict. Sometimes a package works better if another package is present. Sometimes a package enhances the functionality of another package, however in neither case they are required. For this purpose, packages can have:
 
-* `Recommends`: a soft version of requires. If the recommended packages are not installed, the package will be installed anyway. Higher level tools however, may pull automatically recommended packages based on user settings. The reverse of this dependency is `Supplements`. For example a `spellchecker` could `Supplements` an `office-suite` package.
+* `Recommends`: a soft version of requires. If the recommended packages are not installed, the package will be installed anyway. Higher level tools, however, may pull automatically recommended packages based on user settings. The reverse of this dependency is `Supplements`. For example a `spellchecker` could `Supplements` an `office-suite` package.
 * `Suggests` and `Enhances` are the forward and backward version of `Recommends` and `Supplements` in a weaker version.
 
 # Working with packages
 
 For daily system administration and maintenance, the `rpm` tool is not sufficient. You will quickly fall into what is called the "dependency hell". Downloading packages by hand in order to satisfy a dependency to quickly realize this new package also requires something else.
 
-This problem is solved by a tool that implementes a solver. The solver takes:
+This problem is solved by a tool that implements a solver. The solver takes:
 
 * The list of installed packages (and therefore all its dependencies)
 * The list of available packages
@@ -277,7 +277,7 @@ A system normally will have the following repositories:
 * Additional modules, addons products or extensions.
 * An update repository for each base product or extension
 
-Running list repositories with `-u` ie. `zypper lr -u` will show you the URI of the repository. eg. `http://download.opensuse.org/update/leap/42.2/oss/`. If you visit this URI, you will see:
+Running list repositories with `-u` ie. `zypper lr -u` will show you the URI of the repository. e.g. `http://download.opensuse.org/update/leap/42.2/oss/`. If you visit this URI, you will see:
 
 * a `x86_64` directory containing all architecture-dependent packages (ie. ones that contain executables, shared libraries, etc)
 * a `noarch` directory containing architecture-independent packages (ie. ones containing data or scripts)
@@ -285,9 +285,9 @@ Running list repositories with `-u` ie. `zypper lr -u` will show you the URI of 
 
 The metadata for this type of repositories consists in a `repodata/repomd.xml` file index, that is signed (`repomd.xml.asc`) using a key already present in the original system. `repodata/repomd.xml` refers to other metadata file with their checksums. The most important is `primary.xml` which contains all package dependencies.
 
-If you have a directory with rpm packages, you can create the metadata for them using the `createrepo` tool. After that you can serve that repository via HTTP.
+If you have a directory with rpm packages, you can create the metadata for them using the `createrepo` tool. After that, you can serve that repository via HTTP.
 
-If you have a directory with rpms you want to use a repository, you don't need to add metadata. `ZYpp` allows to have a plain local directory as a repository, and will read the metadata directly from the rpm files into its cache.
+If you have a directory with rpms you want to use as a repository, you don't need to add metadata. `ZYpp` allows to have a plain local directory as a repository, and will read the metadata directly from the rpm files into its cache.
 
 ### Refreshing a repository
 
@@ -297,7 +297,7 @@ $ zypper ref
 
 While the base repository of the distribution is normally immutable, repositories like the one containing updates get new content often. The meaning of refreshing a repository is to get the up to date version of the metadata locally, so that all operations (solving, retrieval) match the current content of the repository.
 
-If a repository is out of date, it means the local metadata represents a previous version of the repository content. We would solve, and likely fetch packages, but those packages may not exists on the repository anymore, so you will get an error at retrieval time.
+If a repository is out of date, it means the local metadata represents a previous version of the repository content. We would solve, and likely fetch packages, but those packages may not exists in the repository anymore, so you will get an error at retrieval time.
 
 The list of repositories of the system is kept in `/etc/zypp/repos.d`. `zypper` provides most of repository operations in a safer way than messing with those files by hand.
 
@@ -305,17 +305,17 @@ During refresh, metadata is cached locally at `/var/cache/zypp/raw` and converte
 
 ### Services
 
-Services are a higher-level version of repositories. It is another index that lists repositores. When the system is subscribed from to a service, refreshing the service will result in a new list of repositories, and the package manager will add new ones or remove obsolete ones.
+Services are a higher-level version of repositories. It is another index that lists repositories. When the system is subscribed to a service, refreshing the service will result in a new list of repositories, and the package manager will add new ones or remove obsolete ones.
 
 Services are used for example on SUSE Linux Enterprise with the SUSE Customer Center. A customer is subscribed to a service provided by SCC using a credential. The customer, based on his entitlements, can "activate" a new product. SUSE Customer Center knows about those activations, and on service refresh, it will provide a new list of repositories that includes the new activated product.
 
-Services can be remote (like SCC), or locally, via a plugin installed on the system. The package manager asks the plugin for a list of repositories. It is up to the plugin to build that list. This is normally used for integration with other systems. The connectivity between `zypper` and [Spacewalk](http://spacewalk.redhat.com/)/[SUSE Manager](https://www.suse.com/products/suse-manager) was originally implemented using a local plugin.
+Services can be remote (like SCC), or local (via a plugin installed on the system). The package manager asks the plugin for a list of repositories. It is up to the plugin to build that list. This is normally used for integration with other systems. The connectivity between `zypper` and [Spacewalk](http://spacewalk.redhat.com/)/[SUSE Manager](https://www.suse.com/products/suse-manager) was originally implemented using a local plugin.
 
 ### Repository sources
 
 If you are using SUSE Linux Enterprise, your repositories will appear after the `SUSEConnect` tool registers your product against the [SUSE Customer Center](https://scc.suse.com).
 
-If you are on openSUSE, the default installation will setup the base and update repositories. Additionally, there is a lot of content published by the community on the [build service projects](https://software.opensuse.org/search) or via projects like [packman](http://packman.links2linux.org/).
+If you are on openSUSE, the default installation will setup the base and update repositories. Additionally, there is a lot of content published by the community on the [build service projects](https://software.opensuse.org/search) (but please note that packages from unofficial repositories are not reviewed by openSUSE) or via projects like [packman](http://packman.links2linux.org/).
 
 SUSE Linux Enterprise users can take advantage of the community content via the [Package Hub](https://packagehub.suse.com/).
 
@@ -339,7 +339,7 @@ Patterns are used to install a collection of software in a comfortable way. For 
 $ zypper install -t pattern laptop
 ```
 
-But where do patterns come from? They don't exists on their own. The package managers creates them dynamically from packages names `patterns-XXXXXX` which have a special set of dependencies. So installing a pattern would actually install the package representing that pattern. The other way around is true, if you install the package representing the pattern, it will make the system look like the pattern is installed.
+But where do patterns come from? They don't exist on their own. The package managers create them dynamically from packages names `patterns-XXXXXX` which have a special set of dependencies. So installing a pattern would actually install the package representing that pattern. The other way around is true, if you install the package representing the pattern, it will make the system look like the pattern is installed.
 
 `$ zypper info --provides patterns-openSUSE-laptop` would show you some of the magic behind patterns (equivalent to`rpm -q --provides patterns-openSUSE-laptop`).
 
@@ -351,7 +351,7 @@ Similar to patterns, products can be queried with:
 $ zypper search -t product
 ```
 
-Product come from a package called XXXXXX-release which has some special dependencies (`rpm -q --provides openSUSE-release`). The release package/product installs some information in `/etc/products.d` that is used by other tools get information about the base and addons products installed.
+Product comes from a package called XXXXXX-release which has some special dependencies (`rpm -q --provides openSUSE-release`). The release package/product installs some information in `/etc/products.d` that is used by other tools get information about the base and addons products installed.
 
 ### Patches
 
@@ -367,7 +367,7 @@ During solving, there is one entity providing dependencies that is used to match
 Provides :modalias(pci:v0000104Cd0000840[01]sv*sd*bc*sc*i*)
 ```
 
-Then, a package providing a WLAN driver for some cards (eg. `wlan-kmp-default`), could have the following dependencies:
+Then, a package providing a WLAN driver for some cards (e.g. `wlan-kmp-default`), could have the following dependencies:
 
 ```
 Supplements: modalias(kernel-default:pci:v0000104Cd0000840[01]sv*sd*bc*sc*i*)
@@ -392,7 +392,7 @@ What is important to note is that all those types are only really present at sol
 
 # Creating packages
 
-Packages are created providing a so called `.spec` file. A spec file defines the attributes of the package, explicit dependencies (others are injected as we already mentioned), and how the content of the package is created. A very simple spec file would be:
+Packages are created providing a so-called `.spec` file. A spec file defines the attributes of the package, explicit dependencies (others are injected as we already mentioned), and how the content of the package is created. A very simple spec file would be:
 
 ```shell
 Name:           mypackage
@@ -422,7 +422,7 @@ spec files are heavily defined by macros that make sure that paths and values ar
 
 ## Common macros
 
-When building spec files, you should be familiar with macros like `%{_prefix}`, `%{_datadir}`, `%{_mandir}`, `%{_libdir}`, `%{_bindir}`, etc. You can evaluate a macro like this:
+When building spec files, you should be familiar with [macros](https://en.opensuse.org/SUSE_Package_Conventions/RPM_Macros) like `%{_prefix}`, `%{_datadir}`, `%{_mandir}`, `%{_libdir}`, `%{_bindir}`, etc. You can evaluate a macro like this:
 
 ```console
 $ rpm --eval "%{_libdir}"
@@ -502,7 +502,7 @@ However, where rpm really shines is that you can build the application in the sp
 
 A common use case to illustrate this is the typical Linux application built with `configure && make && make install`. Lets try to build a package for [gqlplus](http://gqlplus.sourceforge.net), an alternative client for Oracle databases.
 
-Provided that you have readline and ncurses development headers, you can build this application just unpacking the tarball and performing the commands mentioned above. Some programs require an extra step with `autoconf` in order to generate the `configure` script. This is specific to buildin software and has nothing to do with packaging. Certainly builting a Qt based program will be a different experience, and if you build a Java application, you will have to deal with other tools.
+Provided that you have readline and ncurses development headers, you can build this application just unpacking the tarball and performing the commands mentioned above. Some programs require an extra step with `autoconf` in order to generate the `configure` script. This is specific to buildin software and has nothing to do with packaging. Certainly building a Qt based program will be a different experience, and if you build a Java application, you will have to deal with other tools.
 
 When you do `./configure` you would need to pass the right `--prefix`. This is where macros help you. You could do `configure --prefix=%{_prefix}`, however, there is a better macro called `%configure` which takes care and sets most of the configure options (try expanding it: `echo $(rpm --eval '%configure')`)
 
@@ -549,7 +549,7 @@ make %{?_smp_mflags}
 
 The `Source0` section specifies a source that you can refer later using the `%SOURCE0` or `%{S:0}` macros. You can have more than one source (`Source1`, etc).
 
-The prep section uses [the %setup](http://ftp.rpm.org/max-rpm/s1-rpm-inside-macros.html#S2-RPM-INSIDE-SETUP-MACRO) macro to unpack the sources. You could as well operate directly on the source files if you need to do something unconventional.
+The prep section uses the [%setup](http://ftp.rpm.org/max-rpm/s1-rpm-inside-macros.html#S2-RPM-INSIDE-SETUP-MACRO) macro to unpack the sources. You could as well operate directly on the source files if you need to do something unconventional.
 
 As we need `make install` to install the files inside `%{buildroot}`, we should call `make install DESTDIR=%{buildroot}`, but `%makeinstall` is just a macro for that.
 
@@ -567,7 +567,7 @@ oracle-instantclient-sqlplus
 ...
 ```
 
-This symbols are provided by the right package, so the solver will match them:
+These symbols are provided by the right package, so the solver will match them:
 
 ```console
 rpm -q --whatprovides 'libncurses.so.6()(64bit)'
@@ -582,17 +582,17 @@ Building this way means the build environment is our system. If a package is in 
 
 If the software you are building links against some library only if it is available, even if you don't mention it in your `BuildRequires`, if that library is present in your system, it will taint the build and make `configure` find it.
 
-What if you want to build against *only* the packages that are in the build requirements?.
+What if you want to build against *only* the packages that are in the build requirements?
 
 ### The Open Build Service
 
-The [Open Build Service](http://openbuildservice.org/) allows to build packages for multiple distributions and architectures. Visit the [Material](http://openbuildservice.org/help/materials/) section of the website for a deeper introduction. For the package we are building, you can get an account at the [openSUSE Build Service](https://build.opensuse.org) instance. Go to your "Home Project", "Create New Package". Upload the spec and sources.
+The [Open Build Service](http://openbuildservice.org/) allows to build packages for multiple distributions and architectures. Visit the [Material](http://openbuildservice.org/help/materials/) section of the website for a deeper introduction. For the package we are building, you can get an account at the [openSUSE Build Service](https://build.opensuse.org) instance. Go to your "Home Project", "Create New Package" and upload the spec and sources. See the [new package workflow](https://en.opensuse.org/openSUSE:Build_Service_Tutorial#Workflow) for more information.
 
-You need then to configure some target distributions for your home project. That can be one base distribution, or another project. This shows the power by allowing building based on layers that can override things from previous layers.
+You need then to configure some target distributions for your home project. That can be one base distribution or another project. This shows the power by allowing building based on layers that can override things from previous layers.
 
 Add the most popular SUSE distributions (latest Leap and Tumbleweed) and your package will be built automatically. A repository will be published automatically and made available for public consumption.
 
-Every time the sources changes, the package will be rebuilt, and if you have more packages in the same project, they will be rebuilt in the right order, and re-published.
+Every time the sources changes, the package will be rebuilt, and if you have more packages in the same project, they will be rebuilt in the right order and re-published.
 
 ![gqlplus on OBS]({{ site.baseurl }}/assets/images/tutorials/rpm-packaging-tutorial/gqlplus-obs.png)
 
@@ -611,7 +611,7 @@ A    home:dmacvicar/gqlplus/gqlplus.changes
 A    home:dmacvicar/gqlplus/gqlplus.spec
 At revision 4.
 ```
-The most interesting feature is the ability to build locally. "We already did that!" you may think (`rpmbuild`). However, `osc` allows you to build in an issolated environment (either a [chroot jail](https://en.wikipedia.org/wiki/Chroot) or a virtual machine), setting up that environment automatically using the `BuildRequires` of the spec file, and also allowing you to build against a different distribution than the one you are running.
+The most interesting feature is the ability to build locally. "We already did that!" you may think (`rpmbuild`). However, `osc` allows you to build in an isolated environment (either a [chroot jail](https://en.wikipedia.org/wiki/Chroot) or a virtual machine), setting up that environment automatically using the `BuildRequires` of the spec file, and also allowing you to build against a different distribution than the one you are running.
 
 
 ```console
@@ -641,6 +641,6 @@ For post-build checks, you can get more information about how to fix them in the
 
 ## Changelogs
 
-Until now we have left the `%changelog` section empty. Some distributions write there the history for the package. SUSE-flavored distributions keep the changelog in a separate `.changes` file. To quickly generate or update it, you can use `osc vc` in the directory containing the spec file and the sources.
+Until now we have left the `%changelog` section empty. Some distributions write there the history for the package. SUSE-flavored distributions keep the [changelog](https://en.opensuse.org/openSUSE:Creating_a_changes_file_(RPM)) in a separate `.changes` file. To quickly generate or update it, you can use `osc vc` in the directory containing the spec file and the sources.
 
 
