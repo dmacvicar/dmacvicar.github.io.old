@@ -157,6 +157,10 @@ Running the "Anbox" entry should start the application manager:
 
 ![Anbox launch]({{ site.baseurl }}/assets/images/posts/anbox/anbox-opensuse.png)
 
+Check if network is working by running the webview:
+
+![Anbox Google]({{ site.baseurl }}/assets/images/posts/anbox/anbox-google.png)
+
 There is, Android running on openSUSE.
 
 And it is not emulated, you can see Android processed running together with other apps, just issolated in a container:
