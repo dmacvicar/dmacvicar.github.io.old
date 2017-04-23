@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The attack of the Droid Chamaleon
+title: The attack of the Droid Chamaleon (running Android apps on openSUSE)
 date: '2017-04-23'
 categories:
 - Software
