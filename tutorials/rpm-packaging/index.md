@@ -224,7 +224,7 @@ Not everything is as strict. Sometimes a package works better if another package
 
 For daily system administration and maintenance, the `rpm` tool is not sufficient. You will quickly fall into what is called the "dependency hell". Downloading packages by hand in order to satisfy a dependency to quickly realize this new package also requires something else.
 
-This problem is solved by a tool that implementes a solver. The solver takes:
+This problem is solved by a tool that implements a solver. The solver takes:
 
 * The list of installed packages (and therefore all its dependencies)
 * The list of available packages
@@ -239,7 +239,7 @@ The rest of the package manager includes:
 * Handling of package repositories
 * Checking the integrity of packages
 * Fetching remote packages
-* Reading and honouring user/system policies
+* Reading and honoring user/system policies
 
 This functionality in SUSE systems is implemented by the [ZYpp](https://en.opensuse.org/Portal:Libzypp) library, which also includes a command-line tool called `zypper`. While tools like [YaST](https://yast.github.io/) also interact with ZYpp, on the console you will likely interact with `zypper`.
 
@@ -611,7 +611,7 @@ A    home:dmacvicar/gqlplus/gqlplus.changes
 A    home:dmacvicar/gqlplus/gqlplus.spec
 At revision 4.
 ```
-The most interesting feature is the ability to build locally. "We already did that!" you may think (`rpmbuild`). However, `osc` allows you to build in an issolated environment (either a [chroot jail](https://en.wikipedia.org/wiki/Chroot) or a virtual machine), setting up that environment automatically using the `BuildRequires` of the spec file, and also allowing you to build against a different distribution than the one you are running.
+The most interesting feature is the ability to build locally. "We already did that!" you may think (`rpmbuild`). However, `osc` allows you to build in an isolated environment (either a [chroot jail](https://en.wikipedia.org/wiki/Chroot) or a virtual machine), setting up that environment automatically using the `BuildRequires` of the spec file, and also allowing you to build against a different distribution than the one you are running.
 
 
 ```console
@@ -643,4 +643,56 @@ For post-build checks, you can get more information about how to fix them in the
 
 Until now we have left the `%changelog` section empty. Some distributions write there the history for the package. SUSE-flavored distributions keep the changelog in a separate `.changes` file. To quickly generate or update it, you can use `osc vc` in the directory containing the spec file and the sources.
 
+The editor used by `osc vc` is determined by the `EDITOR` environment
+variable just like for most `git` commands.
 
+## Finding the devel package on OBS
+
+When contributing to an already-existing package on OBS, it is usually
+best to submit any change requests to the project where that package
+is developed. It is easy to find the devel project using the
+`develproject` (`dp`) command:
+
+``` console
+$ osc dp openSUSE:Factory rsync
+network
+```
+
+Create a branch and a local checkout of the package using the `branch`
+command:
+
+``` console
+$ osc bco network rsync
+A    home:dmacvicar:branches:network
+A    home:dmacvicar:branches:network/rsync
+...
+At revision 11d4f594469a6679d30ae05f8b2187fd.
+Note: You can use "osc delete" or "osc submitpac" when done.
+```
+
+Now, you can make local changes to the package, for example adding a
+patch to be applied to the sources after unpacking the source
+tarball. You can then build the package locally as described earlier
+using `osc build`.
+
+Once you are happy with the package, you can commit it to your
+personal project on OBS using `osc commit`. The build service will
+then build the package remotely, so this step may reveal more issues
+(for example if building on the ARM platform as well) that need to be
+fixed before submitting the change to the devel project.
+
+Once everything builds successfully on the build service as well as
+locally, you can create a *submit request* to get the new version
+merged into the devel project. To do this, use the `submitrequest`
+(`sr`) command:
+
+```console
+$ osc sr
+```
+
+When the package is a branch from an existing project created using
+the `branch` command, the build service remembers where the package
+was branched from and automatically creates the submit request to that
+location. If you want to override this, simply pass the project name
+as an argument to `sr`: `osc sr openSUSE:Factory`. This should rarely
+be needed, however.
