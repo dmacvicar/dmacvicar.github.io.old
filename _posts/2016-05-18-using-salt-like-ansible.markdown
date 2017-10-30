@@ -481,6 +481,7 @@ So, this is how you use Salt in a way similar to Ansible. The best part of this 
 The master/minion infrastructure brings a whole new set of possibilities. The reason we chose Salt is because here is where it starts, and not where it ends.
 
 Thanks to [Chris Fidao](https://serversforhackers.com) for the original Ansible tutorial.
+
 Thanks to [Konstantin Baikov](https://github.com/kbaikov) for corrections and suggestions.
 
 
