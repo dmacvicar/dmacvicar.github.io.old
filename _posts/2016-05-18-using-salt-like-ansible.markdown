@@ -202,7 +202,7 @@ nginx:
   pkg.installed
 ```
 
-To apply this state, you can create a [`top.sls`](https://docs.saltstack.com/en/latest/ref/states/top.html):
+To apply this state, you can create a [`top.sls`](https://docs.saltstack.com/en/latest/ref/states/top.html) and place it in `srv/salt`:
 
 ```yaml
 base:
@@ -298,7 +298,7 @@ Looking at the given Ansible example:
 
 You can see that Ansible has a way to specify variables. Salt has the concept of [pillar](https://docs.saltstack.com/en/latest/topics/tutorials/pillar.html) which allows you to define data and then make that data visible to hosts using a `top.sls` matching just like with the states. Pillar data is data defined on the "server" (there is a equivalent [grains](https://docs.saltstack.com/en/latest/topics/targeting/grains.html) for data defined in the client).
 
-Edit `srv/pillar/paths.yml`:
+Edit `srv/pillar/paths.sls`:
 
 ```yaml
 {% raw %}
@@ -381,7 +381,7 @@ Every thing you add to the `file_roots` path (defined in `etc/salt/master`) can 
 
 ### Template
 
-You can use [Jinja2](https://docs.saltstack.com/en/getstarted/config/jinja.html) templating in states and files, and you can refer to grain and pillar data from them. Salt already include a long list of built-in grains you can use (see `grain.items`) and you can also create your own grain modules to gather other data.
+You can use [Jinja2](https://docs.saltstack.com/en/getstarted/config/jinja.html) templating in states and files, and you can refer to grain and pillar data from them. Salt already include a long list of built-in grains you can use (see `grains.items`) and you can also create your own grain modules to gather other data.
 
 A common use of pillar data is to distribute passwords to the configuration files. While you can define pillar data in the `srv` tree, because you can also define [external pillars](https://docs.saltstack.com/en/latest/topics/development/external_pillars.html) you can source your data from anywhere.
 
@@ -421,7 +421,7 @@ Would apply what `top.sls` defines.
 These are equivalent to grains, and you can see what grains you have available by calling:
 
 ```
-salt-ssh '*' grain.items
+salt-ssh '*' grains.items
 ```
 
 You can use them from Jinja2 as `grains`:
@@ -468,6 +468,12 @@ sshkeys:
 {% endraw %}
 ```
 
+In order to refresh the pillar data, you can use:
+
+```console
+salt-ssh '*' saltutil.refresh_pillar
+```
+
 ## Recap
 
 So, this is how you use Salt in a way similar to Ansible. The best part of this is that you can start learning about Salt without having to deploy a Salt master/minion infrastructure.
@@ -475,5 +481,6 @@ So, this is how you use Salt in a way similar to Ansible. The best part of this 
 The master/minion infrastructure brings a whole new set of possibilities. The reason we chose Salt is because here is where it starts, and not where it ends.
 
 Thanks to [Chris Fidao](https://serversforhackers.com) for the original Ansible tutorial.
+Thanks to [Konstantin Baikov](https://github.com/kbaikov) for corrections and suggestions.
 
 
