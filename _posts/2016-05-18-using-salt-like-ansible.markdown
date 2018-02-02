@@ -44,7 +44,7 @@ The salt package is made of various components, among others:
 * `salt-master`: the master daemon, runs on the management server.
 * `salt-ssh`: a tool to manage servers over ssh.
 
-If you want to run Salt like Ansible, you only need to install `salt` and `salt-ssh` in your machine (the machine where you want to run tasks from).
+If you want to run Salt like Ansible, you only need to install `salt-ssh` in your machine (the machine where you want to run tasks from).
 
 *You don't need anything else than Python on the hosts you will manage.*
 
