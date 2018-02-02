@@ -48,6 +48,11 @@ If you want to run Salt like Ansible, you only need to install `salt-ssh` in you
 
 *You don't need anything else than Python on the hosts you will manage.*
 
+>Well, there are a couple of other [packages required](https://bugzilla.suse.com/show_bug.cgi?id=1057772)
+>```console
+>ssh $HOST zypper -n install python-pyOpenSSL python-xml
+>```
+
 Salt is available out of the box on [openSUSE Leap and Tumbleweed](https://www.opensuse.org/) so if you are using them just type:
 
 ```console
