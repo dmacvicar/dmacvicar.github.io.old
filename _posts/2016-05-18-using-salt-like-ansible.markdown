@@ -381,7 +381,7 @@ Every thing you add to the `file_roots` path (defined in `etc/salt/master`) can 
 ```yaml
 /etc/nginx/myconfig:
   file.managed:
-    - source: salt//nginx/myconfig
+    - source: salt://nginx/myconfig
 ```
 
 ### Template
