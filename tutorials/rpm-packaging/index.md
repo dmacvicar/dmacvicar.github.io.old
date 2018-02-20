@@ -11,6 +11,18 @@ comments: false
 pdf: true
 ---
 
+# Authors
+
+* Duncan Mac-Vicar P.
+
+Thanks:
+
+* Kristoffer Grönlund
+* Kristyna Streitova
+* Bernhard M. Wiedemann
+
+For corrections.
+
 # Document revisions
 
 | Date       | Changes                       |
