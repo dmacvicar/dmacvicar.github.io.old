@@ -27,6 +27,7 @@ For corrections.
 
 | Date       | Changes                       |
 | -----------| ----------------------------- |
+| 20.02.2018 | Merged contributions          |
 | 13.03.2017 | Added links about kmp drivers |
 | 08.03.2017 | First release                 |
 
