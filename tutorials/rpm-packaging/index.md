@@ -20,6 +20,7 @@ Thanks:
 * Kristoffer Grönlund
 * Kristyna Streitova
 * Bernhard M. Wiedemann
+* Konstantin Baikov
 
 For corrections.
 
@@ -27,6 +28,7 @@ For corrections.
 
 | Date       | Changes                       |
 | -----------| ----------------------------- |
+| 09.10.2018 | Fixed typos                   |
 | 20.02.2018 | Merged contributions          |
 | 13.03.2017 | Added links about kmp drivers |
 | 08.03.2017 | First release                 |
@@ -638,7 +640,7 @@ $ osc build openSUSE_Leap_42.2
 
 When you build a package in the build service, you will find out that in addition to the automated magic that injects dependencies, there is a bunch of checks being done to the package.
 
-Yes, those checks are quite pedantic. It is the only way to ensure quality and consistency when a product is assembled from thousands of sources by hundred of contributors.
+Yes, those checks are quite pedantic. It is the only way to ensure quality and consistency when a product is assembled from thousands of sources by hundreds of contributors.
 
 The `spec-cleaner` tool can help you keeping your spec file in shape:
 
