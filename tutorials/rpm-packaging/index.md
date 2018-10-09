@@ -5,7 +5,7 @@ date: '2017-03-08'
 categories:
 - Software
 tags:
-- rpm
+- rpm   
 - linux
 comments: false
 pdf: true
@@ -38,7 +38,7 @@ A package is a way of distributing software on Linux systems. A single applicati
 On some platforms, applications are self-contained into a directory. This makes installing an app just adding a folder, and uninstalling the app, removing it.
 
 Linux systems tend to share as much as components as possible. This is due partly to some advantages of this philosophy, but it is due mostly because in the Linux ecosystem, the whole universe is built by the same entity, except for a few 3rd party applications. This makes easy to assume that a library is available for all applications to consume.
-In an MacOS system, only the core comes from a single vendor, and all applications come from 3rd parties. It is therefore harder to make assumptions, and they tend to ship their own version of any depending component, with the exception of everything documented as the "platform".
+In a MacOS system, only the core comes from a single vendor, and all applications come from 3rd parties. It is therefore harder to make assumptions, and they tend to ship their own version of any depending component, with the exception of everything documented as the "platform".
 
 For example, if an application requires the SSL library and the Qt toolkit. On a Linux system, it will likely use both components from the Linux distribution, while the MacOS version will likely use the SSL library from the OS, but ship its own version of Qt, as it is not a standard MacOS library.
 
@@ -148,7 +148,7 @@ systemd
 
 For example, a package may need a library, or an executable that is called during runtime.
 
-* What does the package provides for other packages to work (`Provides`)
+* What does the package provide for other packages to work (`Provides`)
 
 ```console
 $ rpm -qp --provides rsync-3.1.2-1.5.x86_64.rpm
@@ -364,7 +364,7 @@ Similar to patterns, products can be queried with:
 $ zypper search -t product
 ```
 
-Product comes from a package called XXXXXX-release which has some special dependencies (`rpm -q --provides openSUSE-release`). The release package/product installs some information in `/etc/products.d` that is used by other tools get information about the base and addons products installed.
+Product comes from a package called XXXXXX-release which has some special dependencies (`rpm -q --provides openSUSE-release`). The release package/product installs some information in `/etc/products.d` that is used by other tools to get information about the base and addons products installed.
 
 ### Patches
 
