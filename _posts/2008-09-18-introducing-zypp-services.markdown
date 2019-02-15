@@ -44,12 +44,13 @@ For a quick test, I needed a service provider, and I have none. I could have use
 
 So I created a rails application, a very simple one, that returns a dynamic [repository index](http://en.opensuse.org/Standards/Repository_Index_Service) by searching for the “emacs” keyword using the [opensuse-community search API](http://api.opensuse-community.org/searchservice/Search/Simple/openSUSE_110/emacs).
 
-```
+```ruby
 map.connect ':controller/repoindex.xml', :action => 'index'
 ```
 
 Requesting my new service http://localhost:3000/repo/repoindex.xml returns me the following.
 
+```console
 # zypper ls  
 # | Alias | Name | Enabled | Refresh | Type  
 ---+-----------------------------+---------------------------------------------------------------------+---------+---------+-------  
@@ -73,12 +74,13 @@ Requesting my new service http://localhost:3000/repo/repoindex.xml returns me th
 18 | rpms | rpms | Yes | No | rpm-md  
 19 | ruby | Ruby | No | No | rpm-md  
 20 | zypp\_svn | ZYPP SVN Builds (openSUSE\_11.0) | Yes | Yes | rpm-md  
+```
 
 Do you see that all the added repositories are “hidden” behind the added service.
 
 If you want to see them, then you need to list the repositories instead:
 
-[sourcecode wraplines="false"]  
+```console
 # zypper lr  
 # | Alias | Name | Enabled | Refresh  
 ---+-------------------------------------+---------------------------------------------------------------------+---------+--------  
@@ -113,6 +115,7 @@ If you want to see them, then you need to list the repositories instead:
 29 | ruby | Ruby | No | No  
 30 | server\_mail\_openSUSE\_11.0 | server\_mail\_openSUSE\_11.0 | No | Yes  
 31 | zypp\_svn | ZYPP SVN Builds (openSUSE\_11.0) | Yes | Yes
+```
 
 There you have them all. You should also note that service configuration is very similar to repository configuration. Only services.d intead of repos.d.
 
